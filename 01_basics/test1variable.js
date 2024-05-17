@@ -6,8 +6,9 @@ const accountId = 1232434;//const ko change nhi kiya jata
 //accountId = 2; not allowed
 
 let accountEmail = "aavez@google.com";
-/*let accountEmail = "redchef@google.com" not allowed ek bar let se Email banaye to double nhi bana sakte
-sirf accountEmail ="redchef@google.com"*change karsakte hai jaise */
+/*let accountEmail = "redchef@google.com" not allowed ek bar let se Email banaye to double nhi bana sakte sirf 
+accountEmail ="redchef@google.com"
+change karsakte hai jaise */
 
 var accountPassword = "1234345";
 
@@ -19,7 +20,7 @@ accountEmail = "redchef@google.com";//ye method sahi hai.
 accountPassword = "sadf272lkj"
 accountCity = "Bengluru"
 accountCity= "chennai"
-let accountState;/*javaScript me varible declare karke chode dete hai value kuch nhi lagate hai to javascript usse undefined manti hai*/
+let accountState;      /*javaScript me varible declare karke chode dete hai value kuch nhi lagate hai to javascript usse undefined manti hai*/
 
 
 console.table([accountId,accountPassword,accountEmail,accountCity,accountState]);
