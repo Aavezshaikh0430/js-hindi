@@ -4,7 +4,7 @@
 // alert(3+3); we are using node.js not browser
 
 console.log(3+
-    3) ;//code readability shoud be high
+    3) ;//code readability should be high
 console.log("hitesh");
 
 let name = "Aavez";
@@ -26,7 +26,7 @@ let state; //undifined
 
 /*null => standalone value /*null means empty value iska ye matlab nhi ke ham ne ek string value liya aur use empty rakh diya 
 [eg: let name = ""] ye e.g null nhi hai. 
-kyon ke ye khali string hai isliye iska type decide hogaya ye string hai.*/
+kyon ke ye khali string hai isliye iska datatype decide hogaya ye string hai.*/
 /* null ek special type hai aap isko assing bhi karsakte hai null jaise */
 
 let state2 = null;
