@@ -27,19 +27,19 @@ console.log(scoreChangedInNumber1);
 
 let isLoggedIn = 1
 let booleanIsLoggedIn = Boolean (isLoggedIn);
-console.log(booleanIsLoggedIn);
+// console.log(booleanIsLoggedIn);
 
 let isLoggedIn1 = 0
 let booleanIsLoggedIn1 = Boolean (isLoggedIn1);
-console.log(booleanIsLoggedIn1);
+// console.log(booleanIsLoggedIn1);
 
 let isLoggedIn2 = ""
 let booleanIsLoggedIn2 = Boolean (isLoggedIn2);
-console.log(booleanIsLoggedIn2);
+// console.log(booleanIsLoggedIn2);
 
-let isLoggedIn3 = "Aavez"
-let booleanIsLoggedIn3 = Boolean (isLoggedIn3);
-console.log(booleanIsLoggedIn3);
+ let isLoggedIn3 = "Aavez"
+ let booleanIsLoggedIn3 = Boolean (isLoggedIn3);
+// console.log(booleanIsLoggedIn3);
 
 //boolean 1 =>true; 0=>false
 //" "=>false
@@ -47,8 +47,8 @@ console.log(booleanIsLoggedIn3);
 
 let someNumber = 33;
 let convertNumber = String(someNumber);
-console.log(convertNumber);
-console.log(typeof convertNumber)
+// console.log(convertNumber);
+// console.log(typeof convertNumber)
 
 //33 ko string me convert kare to output 33 ayega magar typeof check kare to String ayega
 

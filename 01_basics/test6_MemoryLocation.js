@@ -76,6 +76,7 @@ console.log(studentId.RollNo);
 
 let username = "Aavez shaikh";
 let user2 = username;
+console.log(user2);
  user2 = "Muzzammil shaikh";
  console.log(user2);
  console.log(username);
