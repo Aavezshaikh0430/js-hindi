@@ -31,7 +31,7 @@ const JsUser = {
 // console.log(JsUser.email);
 // console.log(JsUser["email"]);//[email] rong syntex []ke under kabhi bhi "" me likhna hai.
 // console.log(JsUser["full Name"]);
-// console.log( typeof JsUser[mySym]);
+console.log( typeof JsUser[mySym]);
 
 //objects ki properties ko change kaise karte hai.
 //email ko change karna ho to
