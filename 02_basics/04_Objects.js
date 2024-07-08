@@ -98,3 +98,8 @@ console.log(Object.entries(tenderApp));
 //objects me hame value pata lagana ho to kya wo value hai objects me .to 
 //return boolean ayegan. true , false 
 console.log(tenderApp.hasOwnProperty('isLogged'));
+
+
+
+
+
