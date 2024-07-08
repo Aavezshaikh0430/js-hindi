@@ -23,3 +23,15 @@ console.log(price);
 //courseInstructor name bade ko ham chota bhi karsakte hai.
 const {courseInstructor: instructor} = course
 console.log(instructor);
+
+//JSON
+
+// {
+//     "coursename" : "js in hidi",
+//     "price" : "999",
+//     "courseInstructor" : "Aavez"
+// }
+
+//json javascript object notetion.
+//json object hi hote hai .magar is object ka koi naam nhi hota hai.
+//json ki key bhi " " string me hoti hai. aur value bhi strig me hoti hai.
