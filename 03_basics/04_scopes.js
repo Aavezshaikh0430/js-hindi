@@ -13,11 +13,12 @@ function one (){
     function two(){
         const website = "youtube"
         console.log(userName);
+        console.log(website);
     }
-    // console.log(website);
-    two()
+    //console.log(website);
+    two();
 }
-// one(); //jab tak one() commit rahenga output nhi ayenga output ke liye one ko uncommit karo
+     one(); //jab tak one() commit rahenga output nhi ayenga output ke liye one ko uncommit karo
 
 // secound eg.
 
@@ -27,11 +28,11 @@ if(true){
     if(username==="Aavez"){
         const website = " Instagram"
 
-        console.log(username + website);
+        // console.log(username + website);
     }
-    // console.log(website); error  kyon ke scope ke bahar axis nhi hoga website
+    // console.log(website); //error  kyon ke scope ke bahar axis nhi hoga website
 }
-//console.log(userName); //error kyon ke scope ke bahar axis nhi hoga username .
+// console.log(userName); //error kyon ke scope ke bahar axis nhi hoga username .
 
 
 
@@ -43,7 +44,7 @@ if(true){
 
 //ham function ko declartion se pahele axis karskte hai.
 
-console.log(addOne(5));
+// console.log(addOne(5));
 function addOne (num){
     return num + 2
 }
@@ -67,5 +68,5 @@ function addOne (num){
 const addTwo = function (num){
     return num + 4
 }
-console.log(addTwo(8));
+// console.log(addTwo(8));
 
