@@ -23,3 +23,7 @@ user.username = "sammy";
 user.prrice = "free";
 
 user.welcomeMessage();
+
+((username)=> {
+console.log(`${username} DB connected`);
+})("Aavez")
