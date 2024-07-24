@@ -85,4 +85,9 @@ chai();
 ((username)=> {
     console.log(`DB connected ${username}.`);
     })("Aavez");
+    (
+        aurcode=(price)=>{
+            console.log(`Course price is Rs. ${price}/- `)
+        }
+    )(999);
 

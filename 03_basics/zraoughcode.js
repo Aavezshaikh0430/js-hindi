@@ -26,4 +26,9 @@ user.welcomeMessage();
 
 ((username)=> {
 console.log(`${username} DB connected`);
-})("Aavez")
+})("Aavez");
+(
+    aurcode=(price)=>{
+        console.log(`course price is ${price} .`)
+    }
+)(999)
