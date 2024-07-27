@@ -67,6 +67,85 @@ coding.forEach( printme)
 //aur ek pure array ki list bhi aati hai.
 
 coding .forEach(  (item , indexNumber , arr)=>{
-    console.log(item, indexNumber, arr);
+    // console.log(item, indexNumber, arr);
 
 })
+
+
+
+//hamare pass ek arry hota hai.
+//us me kai sare object hote hai.
+//   [{},{},{}] //ye common senario forEach me kafi baar use hota hai.
+
+//
+//array of Object ko kaise axis karne for each loop me 
+
+//ham ek array lete hai. myCoding be ke.
+
+//basic syntex of arry Of object.
+// const myCoding = [
+//     {},
+//     {},
+//     {},
+// ]
+
+const mycoding =[
+    {
+        languageName : "Javascript",
+        languageFile : "Js"
+    },
+
+    {
+        languageName : "Java",
+        languageFile : "java"
+    },
+
+    {
+        languageName : "Rubby",
+        languageFile : "rbb"
+    },
+
+    {
+        languageName : "c++",
+        languageFile : "cpp"
+    },
+
+    {
+        languageName : "python",
+        languageFile : "python"
+    }
+]
+
+//hame array of objet par itration sikhna hi hoga ye bahot common opration hai.
+//jo dataBase se value ati hai wo array ki format me hi aati hai. aur 
+//har ek value ek object hi hota hai.
+
+//agar aapko forEach loop pata hai to aap bahot asani se loop lagasakte hai.
+
+//mai ne yaha mycoding likha aur dot foreach kiya phir call back function aaya
+//fo arrow function laga ka  call back kiya.
+//mujhe pata hai. ke mujhe har ek value ka axis hota hai.
+//ab me us item bolu, val bolu jo man chahe wo bolu 
+//item ke under value kaise axis karte .
+//item ka axis to hai. 
+//ab ye item kya hai. item is object ka axis hai.
+
+//yaha par hamare pass us object ka axis hai.
+//to ham item . dot karte hai to hame object ki property ayengi to hame lagnguge name
+//axis karna hai. to
+//item.languageName
+
+//kitni aasani se aap ne array ke under object jo apne aap me complex chez hai.
+//aap ne 2 mint me uska axis le liya. kyon ke aapke foundation strong hai.
+
+//aap ne array ke under objcet ke under ek proprty nikal de.
+//apne object me 2 value hi hai. 
+//next time 200 value kyon na ho easly se ham nikal sakte hai.
+//ye aapke data base me bahot kaam me aane wala hai.
+
+mycoding.forEach((item)=>{
+    
+     console.log(item.languageName);
+ })
+
+
