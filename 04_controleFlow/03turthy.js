@@ -53,3 +53,39 @@ const userEmail = {}
  if (Object.keys(myObj).length === 0) {
     console.log("object is empty");
  }
+
+ //Nullish Coalescing Oprator (??) : null undefined
+
+ let val1;
+ val1 = 5 ?? 10;
+
+//kai baar kya hota hai. jab aap data base se call karenge ya specially firebase in sabka use karenge
+//app write ka use karenge to aapko directly response nhi milta hai. aapko 2 value milti hai.
+//ho sakta hai null responce aajaye hosakta responce aaye hi na undefined aa jaye us waqt aapka
+//code struture pora ka pora khrab ho jaye us case ke liye specally Nullish Coalescing oprator banaya
+ //gaya hai.
+
+ //ye sirf null or undefined ke liye bana hai.
+
+ val1 = null ?? 10;
+
+ val1 = undefined ?? 15;
+
+ val1 = null ?? 20 ?? 30 //ye zada use nhi hota. zada tar 2 value me hi data aata hai.
+
+
+ console.log(val1);
+
+
+
+ //Terniary Oprator
+
+ //terniary oprator or nullish coalescing oprator ye dono alag alag oprator hai.
+ //inka zaror dhyan dena hoga
+
+ //ye if else ka chota sa syntex hai.
+
+ //condition ? true : false
+
+ const iceTeaPrice = 100;
+ iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80");
