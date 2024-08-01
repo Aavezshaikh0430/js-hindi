@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+</head>
+<body>
+    <div class="bg-balck">
+        <h1 class="heading">DOM learning on Chai aur code.</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body> 
+</html>
+
+<!--  DOM kya hai :-> Document Object model
+  aapka ne jitna web page likha hai. end of the day aapne react use kiya angular use kiya 
+  jo aapka document banta hai HTML banta hai. kuch object se hi to banta hai. 
+  Object kya hai  1]html hogaya , head hogaya, body hogaya ye object hi to hai.
+
+  Doument object Model :- ye aapka Document hai ye kis model se bana howa hai.
+  kya uska structure hai. page kaise dikhta hai. ye sara aapko samj me aagaya
+  aap usme mainupulation bhi karne lag jaonge.
+
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  //brwoser ke console jai aur type kare
+
+  console.log(window)
+
+  window ke under document meliynga . 
+  console.log(window.document )
+
+  ya aap sirf
+  console.log(document)
+  bhi type karsakte hai. aapko window likhne ki jarorat nhi hai.
+
+  brwoser ke under window hai . aur window ke under hamara document hai.
+  aur documnet ke under hamara html hai. yaha se acutally hamara page start hota hai.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+doctype ye actually aapka document type bata hai. ye html5 page hai .
+document actually aapka html se start hota hai. phir hamar head tag hai aur body tag 
+is ka daigram banate hai.
+
+sabse pahele 
+
+    WINDOW
+    DOCUMENT
+    HTML
+    1] HEAD  2]BODY
+
+    [
+    1]HEAD=>  1] title  2] meta tag
+
+    1]title =>1]text node 
+
+    //text node ka matlab=> doumnt object model hai to har cheez ko node bola jata hai
+    jaise head bhi apne aap me ek node hai. body bhi apne aap me ek node hai.
+    title bhi apne aap me ek node hai. meta bhi aapne aap me ek node hai.
+    programer fancey word use karte hai node. 
+
+    head 2] meta => meta ke under attribute hai sirf
+
+    head section end
+    ]
+
+    [ 2]Body 
+    1]div :=1]attribute
+
+    div 1]h1 2] p
+    
+    h1]1]atrribute  2]textnode
+    p] 1] text node
+    ]
+
+    ye bana hai aapka DOM document object model.
+
+
+    console.log(document.link)
+    docunment . se ham sari information collect kar sakte hai.
+
+    hame .link se bahot sare link milte hai linke hamare html collection hia. arry nhi hai.
+
+    beigner bahot sare ye samaj lete hai ke jab DOM manupulation karte hai. to confuse hote hai.
+    html collection, node collection, aur arry ye alag cheze hai inko arry me convert kiya jata hai.
+    but ye bydefualt arry nhhi hai.
+    inki jo property hai map filter wo iske pass avilable nhi hoti hai.
+
+    koi chez hame select karni hai. to documnt ke threough
+
+    ek method hota hai. get elemnt by id
+
+    document.getElementById('') jo bhi ham seclet kiye hai id uski copy  '' yaha past karni hogi
+
+     document.getElementById('firstHeading')
+
+     result ayenga. jo bhi output aya hai uspar ham kuch bhi manupulate karsakte hai.
+
+       document.getElementById('firstHeading').innerHTML = "<h1>Chai aur code</h1>"
+
+       iss traha se ham webpage par chang ies karsakte hai.
+
+
+       web browser per changies ke liye ye syntex use kare    ('') yaha '' ke bech me kai
+       bhi id ki link copy kar ke paste karsakte hai.
+       wo id change ho jati hai.
+       document.getElementById('firstHeading').innerHTML = "<h1>Chai aur code with Aavez</h1>"
+
+
+
+-->

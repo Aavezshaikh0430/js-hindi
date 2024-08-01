@@ -16,7 +16,7 @@ const myObject = {
 //     }
 // }
 
-//for in loop tap kare to bahot bad suggestion ata hai . itna darne ki zarrorat nhi.
+//for in loop tap kare to bahot bada suggestion ata hai . itna darne ki zarrorat nhi.
 
 for (const key in myObject) {
     //console.log(key); //output js cpp rb swift .ek ke niche ek ayenge.
