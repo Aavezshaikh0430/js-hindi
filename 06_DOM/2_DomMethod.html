@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+        .bg-black{
+            background-color: black;
+            color: wheat;
+        }
+    </style>
+</head>
+<body  class="bg-black">
+
+    <div >
+        <h1 id="title" class="heading">DOM learning on Chai aur code.<spnan style="display: none;"> test Text.</spnan></h1>
+
+        <h2>Lorem ipsum dolor sit first.</h2>
+        <h2>Lorem ipsum dolor sit secound.</h2>
+        <h2>Lorem ipsum dolor sit Thired.</h2>
+        <h2>Lorem ipsum dolor sit fourth.</h2>
+
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <label for="">form</label><br>
+        <input type="password" name="" id="" placeholder="enter password">
+
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+    </div>
+
+</body> 
+</html>
+
+
+<!-- 
+js ke element ko kaise pakad sakte hai. kaise adapt karte hai. kaise manupulat karte hai wo dekte hai.
+react khud hi element ko pakadti hai. 
+magar javascript ko manually hame manuplate karna padta hai.
+isiliye js ke skill hamesha kaam ayenge .
+react aaj hai. kal nhi 
+
+-->
+
+<!-- 
+document.getElementById("title")
+hamne id ko slect kiya.
+
+document.getElementById("title").id
+"title"
+
+document.getElementById("title").class
+undefined
+
+document.getElementById("title").className
+"heading"
+
+------------------------------------------------------------
+getattribute me ham key dalte hai. wo us key ki value deta hai. 
+
+document.getElementById("title").getAttribute
+f getAttribute() { [native code] }
+
+get attribute function hai.
+document.getElementById("title").getAttribute()
+magar aise ham pass nhi karsakte.
+
+attribute me batana hoga ke attribute me konsa wala attrribute apko chahiye.
+
+document.getElementById("title").getAttribute('id')
+'title'
+
+document.getElementById("title").getAttribute('class')
+'heading'
+
+----------------------------------------------------------------
+jaise get attribute hota hai. waise set attribut bhi hota hai.
+jaise ham class set karna hai class already hai. ham class name change karsakte hai.
+set attribute se . ye hamesha override hogi 
+ab ham className heading se test karte hai.
+to class name change hojayengi. 
+elemnet me test value set hogi . aur vs code me hame to heading hi value dekengi
+ye hamesha override karnge  is ka kaas khayal rekhe.
+
+document.getElementById("title").setAttribute( 'class' , 'test')
+
+hame classname change hi karna hai to purani clssname nhi change karna hai.
+jaise
+document.getElementById("title").setAttribute( 'class' , 'test heading')
+'class' , 'test heading'
+ isi tarha se 2 classname set karsakte hai.
+
+ -----------------------------------------------------------------------
+
+ document.getElementById("title")
+
+ ko id variable me store karte hai
+
+ const title = document.getElementById("title");
+
+ ab hame styling set karte hai.
+ title.style.backgroundColor = 'green'
+
+ title.style.backgroundColor = 'green'
+'green'
+title.style.padding = '20px'
+'20px'
+
+title.style.margin = '20px'
+'20px'
+title.style.borderRadius = '20px'
+'20px'
+
+ye hogaya aapka basic kaise value ko grap karna hai. ye samaj me to aaya hi.
+getElementById to samaj me aaya hi hoga aapko.
+-------------------------------------------------------------------
+
+Intresting
+kaise content ko add kiya jata hai.
+
+title ko styling dekha hai. magar title se value /content kaise nikalte hai wo dekte hai.
+title ka content kya hai. "DOM learning chai aur code." ye content hai.
+
+content 3 type se nikalte hai.
+1]textContent
+2]innerText
+3]innerHTML
+
+ye teen method se ham content nikal sakte hai.
+
+magr ye teeno me differnece kya hai.
+
+innerText aur textContent me differnce dekte hai.
+
+title.innerText
+'DOM learning on Chai aur code.'
+
+title.textContent
+'DOM learning on Chai aur code. test Text.'
+
+1]innerText me wo text aya jo visible hai. magar
+2]textContent me vo bhi text dekhenga jo aapne display property se none kiya ho.
+textContent me sara ka sara content milenga.
+condition agar mujhe sara ka sara content chahiye jo display property se none kiya ho
+to mai textContent use karonga
+
+agar mujhe sirf content chahiye to mai  innerText use karonga.
+
+
+3]innerHTML kya deraha hai pura html ka value deraha hai. us ke under kuch html likha ho wo bhi hame de raha hai. 'DOM learning on Chai aur code.<spnan style="display: none;"> test Text.</spnan>'
+ye pora code de raha hai innerHtml.
+
+
+title.innerHTML
+'DOM learning on Chai aur code.<spnan style="display: none;"> test Text.</spnan>'
+--------------------------------------------
+title.innerText
+'DOM learning on Chai aur code.'
+title.textContent
+'DOM learning on Chai aur code. test Text.'
+title.innerHTML
+'DOM learning on Chai aur code.<spnan style="display: none;"> test Text.</spnan>'
+
+---------------------------------------------------------------------------------------------------
+
+document.getElementsByName('heading')
+NodeList []
+length
+: 
+0
+[[Prototype]]
+: 
+NodeList
+entries
+: 
+ƒ entries()
+forEach
+: 
+ƒ forEach()
+item
+: 
+ƒ item()
+keys
+: 
+ƒ keys()
+length
+: 
+(...)
+values
+: 
+ƒ values()
+constructor
+: 
+ƒ NodeList()
+Symbol(Symbol.iterator)
+: 
+ƒ values()
+Symbol(Symbol.toStringTag)
+: 
+"NodeList"
+get length
+: 
+ƒ length()
+[[Prototype]]
+: 
+Object
+
+class name se method aate hai.
+----------------------------------------
+QurrySelector
+
+jab ham 
+document.querySelector("h1")
+
+likhte hai to page ka pahela h1 select hota hai.
+------------
+
+document.querySelector("h2")
+
+likhte hai to page ka pahela h2 select hota hai.
+<h2>Lorem ipsum dolor sit first.</h2>
+
+---------------------------------------
+quryselector se ham id aur class bhi slecet karsakte hai.
+
+document.querySelector("#title")  //id select [#] se karte hai ("#title") 
+
+document.querySelector(".heading") //class select ham [.] se karte hai (".heading")
+----------------------------------------------------
+input quryselector
+
+document.querySelector('input[type='password']') //ye syntex worng hai '' nhi "" likhna hai type ke baad
+[type='password']ye worng hai ('input [type="password"]') input ke baad space bhi nhi hona chahiye nhi to null ayenga output
+
+[type="password"]ye write way hai. ('input[type="password"]')
+
+document.querySelector('input[type="password"]')
+
+
+----------------------------------------------------------------
+hame ul ke li ko select karna hai to
+
+document.querySelector('ul') ko selct karnge.
+phir ham document.querySelector('ul')ko ek varibale me set karsakte hai.
+
+const myul = document.querySelector('ul')
+ham is variable par further qury bhi laga sakte hai.
+
+myul.querySelector('li')
+myul ko ham ek varibale me bhi store karte hai. tak pahele li ko target karsake.
+
+const turnGreen =myul.querySelector('li')
+
+turnGreen.style.bagroundcolor= "red"
+
+turnGreen.innerText
+One
+
+turnGreen.innerText = 'Five'
+Five
+
+aapka first ul jo one ul hai . wo five ban jayenga .
+
+ab ham ne ul ke li ko traget kiya hai.
+
+kitna easy hai dom ko manupulate karna. agar aapko ye samaj me aye ke me ajaye ke mai usse kaise
+select karna kaise value ko lena 
+ye jo tha sirf ek induvidual element ko select karna.
+
+abb ham 2 selector pe par ate hai.
+--------------------------------------------------
+
+
+
+-->
