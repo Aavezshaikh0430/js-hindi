@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+        .bg-black{
+            background-color: black;
+            color: wheat;
+        }
+    </style>
+</head>
+<body  class="bg-black">
+
+    <div >
+        <h1 id="title" class="heading">DOM learning on Chai aur code.<spnan style="display: none;"> test Text.</spnan></h1>
+
+        <h2>Lorem ipsum dolor sit first.</h2>
+        <h2>Lorem ipsum dolor sit secound.</h2>
+        <h2>Lorem ipsum dolor sit Thired.</h2>
+        <h2>Lorem ipsum dolor sit fourth.</h2>
+
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <label for="">form</label><br>
+        <input type="password" name="" id="" placeholder="enter password">
+
+        <ul>
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+            <!-- foreach method ke baad add kiya hu <li>Four</li> -->
+             <li class="list-item">Four</li>
+        </ul>
+    </div>
+
+</body> 
+</html>
+
+<!-- 
+
+myarr=[1, 2, 4, 5]
+jab bhi ham arry ko console me open karnege to uske prototype bhi milenge
+ye jo prototype me jitne method fucntion hote hai. ye sab method function ham apply karsakte hai
+us arry par. is liye prototype hame dekna chahiye . hame pata lage kitne method ham arrya par laga sakte. 
+isiliye aap ye sab value laga sak rahe hai. kyon ke uske prototype me define hai ke aap ye ye value 
+use karsakte hai.
+
+
+ab ham qurryselectorAll dekte hai.
+document.querySelectorAll('li')
+NodeList(3) [li, li, li]
+
+ham Nodelist milinga. dikhne me to arry jaisa hi hai . is ke pass bhi prototype hai
+iske prototype me foreach bhi hai.
+arry me pada hai . arry ke pass loop laga sakta hu map call kar sakta hu.
+
+jab bhi ham dom sikte hai to ham NodeList ko arry samajte hai. jo nodelist hai HTML collection hai.
+ye pure arry nhi hai.
+
+jab bhi ham nodelist aye to uski propeties check kare. to nodelist me foreach available hai magar
+map avialable nhi hai.
+
+to ham li ke element ko kaise select kare
+ 
+document.querySelectorAll("li")
+
+const tempLiList = document.querySelectorAll("li")
+
+tempLiList.style.color = "green"                 //aise templiList nhi likh sakte
+ReferenceError: tempLiList is not defined
+
+tempLiList[0].style.color = "green"    //pahela li green hoga
+
+tempLiList[1].style.color = "red"       //dusra li red hoga 
+
+tempLiList[1].style.padding = "15px"
+
+istraha ham qaurryselector all se ham konse phi element ko traget kar sakte hai.
+
+agar hamre pass ek hi H1 raha to bhi hame uski index value dena hai.
+jaise hamre code ek hi H1 hai magar hame H1[0] dena hoga 
+
+eg:
+document.querySelectorAll("h1")
+const myHeading = document.querySelectorAll("h1")
+
+myHeading.style.color = "green"  //aise nhi likh sakte
+myHeading[0].style.color = "green" //aisa likhna hoga. to code run hoga.
+myHeading[0].style.borderRadius= '20px'
+myHeading[0].style.backgroundColor= 'white'
+
+------------------------------------------------------------------------------
+
+forEach method
+
+forEach method se ham har ek element par style karsakte hai.
+
+document.querySelectorAll('li')
+
+const tempLiList = document.querySelectorAll('li')
+
+tempLiList.forEach(function(){})
+
+//console me agar hame {} paranthessis ek under enter karana hoto.
+agar enter kare to code hi run hoga.
+hame shift+Enter button use karna hog .
+
+
+tempLiList.forEach(function(li){
+    li.style.backgroundColor =  "yellow"
+    li.style.color = "green"
+    li.style.padding = "20px"
+    
+})
+
+nodelist to aapko samaj me aagaya . nodelist ko arry me convert karne ke trike bhi hote hai.
+magar jayda tar nodlist me aap foreach method use karo. kyon ke nodelist me foreach method
+available hoti hai.
+
+-----------------------------------------------------------
+
+className('')= property
+getElementByClassName('')
+document.getElementByClassName('')
+HTMLCollection[]
+
+htmlcollection[] alag hota hai. nodelist ke html collection me hame foreach method bhi avialable nhi hoti hai.
+isiliye htmlcollection ko hame arry me conver karna hoga
+
+const myList=document.getElementByClassName('')
+
+mylist ko ham arry me convert karna hai.    [.from]  //arry method from kisi element ko arry me convert karta hai.
+
+arry.form(myList);
+
+arry.from(myList); ko ek variable me store karenge
+
+const mynewArry=arry.form(myList);
+
+ab hame arry ki sab property milinge.
+
+mynewArry.foreach(fucntion(li){
+li.style.backgroundColor= 'green'
+})
+
+--------------------------------------------------------------------------
+document.getElementsByClassName('list-item')
+
+const tempClassList =document.getElementsByClassName('list-item')
+
+Array.from(tempClassList)
+
+const myConvretedArry =Array.from(tempClassList)
+
+myConvretedArry.forEach(function (li) {
+    li.style.color='orange'
+})
+----------------------------------------------------------------------------------
+vikipedia par kuch changes karte hai.
+
+document.querySelectorAll('h2')
+const heading=document.querySelectorAll('h2')
+
+heading[0].innerText
+treadmark.
+
+heading[1].innerText
+History
+
+heading.forEach(function(li) {  
+
+    li.style.backgroundColor= 'white';
+    li.style.color= 'white';
+    li.style.borderRadius= '10px';
+    li.innerText= 'Aavez'        //sab ke sab h2 hamre Aavez me convert ho jayenge.
+})
+
+//ab ye samaj aagaya ke ham text ko kaise handle karrahe hai.
+1]nodelist ko kaise handle karna hai.  //forEach method se
+2]HtmlCollection ko kaise handle karna hai.  
+//htmlCollection ko .from se arry me convert karke uspe arry method lagana hai ye hame aagaya.
+
+-->
