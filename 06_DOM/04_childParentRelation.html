@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom | chai aur Code.</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+
+<script>
+
+const parent = document.querySelector('.parent')
+// console.log(parent);
+
+//ab is parent me kitne child mile hai wo bhi ham detect kar sakte hai.
+
+// console.log(parent.children);
+
+//jab ham parent ke children dectect karenge to hame ek HTML collection 
+//milenga. jab bhi ham parent ko select karenge aur useme child ko nikalna 
+//hoto us me hame HTML collection milenga.
+
+//kisi bhi elemt ko target karna ho to .
+
+// console.log(parent.children[1]); // output = <div class='day'>Tuesday</div>
+
+//  console.log(parent.children[1].innerHTML) // output = tuesday
+//------------------------------------------------------------------
+
+//hamara classic for loop ham chala sakte hai. parent class par
+
+for (let i = 0; i < parent.children.length; i++) {
+    // console.log(parent.children[i]);
+    // console.log(parent.children[i].innerHTML);
+    
+}
+
+// parent.children[1].style.color="orange"
+// parent.children[2].style.color = 'green'
+// parent.children[2].style.backgroundColor = 'yellow'
+// parent.children[2].style.padding = '10px'
+// parent.children[2].style.borderRadius = '20px'
+// parent.children[2].style.fontSize = '20px'
+
+//hame firstElementchild bhi milsakta hai
+
+parent.children[1].style.color="orange"
+
+// console.log(parent.firstElementChild.innerHTML) //Monday
+
+// console.log(parent.lastElementChild.innerHTML) //Thursday
+
+//ye aage jake bahot kaam me aati hai. javascript me jab bhi hame first elemnt ko ya last element ko target karne keliye.
+
+//jaise ham parent se child ko target kar rahe hai. waise ham child se parent ko bhi target karsakte hai.
+//-------------------------------------------------------------------------
+
+// qureyseclector me class day jo hai. usme first class ko hi track karta hia.
+//first day class Monday ko bydefualut track karenga. 
+const dayOne =document.querySelector('.day')
+
+// console.log(dayOne.innerHTML); //Monday
+
+//magar hame secound class ko target karna ho to 
+//nextElementSibling se ham sound class ko target karte hai.
+
+// console.log(dayOne.nextElementSibling.innerHTML) //Tuesday
+
+//ham ab child se parent ko track karenge.
+
+// console.log(dayOne.parentElement); //pura parent div agyenga. 
+
+// console.log(dayOne.innerHTML);
+// console.log(dayOne.nextElementSibling.innerHTML) 
+// console.log(dayOne.parentElement);
+//-------------------------------------------------------------------
+
+console.log("NODES", parent.childNodes)
+
+/*NodeList kya hai. :-node list me hame value dikh rahi hai 9 serprize ki baat ye hai. jab ham isse open karnege . aap soch rahe honge isme moneday se thursday tak vlaue hogi aur vo vlue 4 hai . magar Nodelist me 9 kyon dikha raha hai.
+------------------------
+nodelist ya childNode ek pura complex tree structure hai. jaise html ke under head aur body hote hai. acch ab aap soch rahe honge ek div hai
+uske 4  node honge aise nhi hai bahot sari cheze change hoti hai.
+cosole me dikha raha hai 9 hamare pass hai 4 hi hai.
+
+jaisa DOM:- document object model ek pura tree structure hai. har ek cheez ki important hai.
+vaise aap ne parent div
+parent div me aap ne ek space diya wo bhi ek node element hai. uske baad aap ne day div banaya wo bhi ek node hai. phir aap ne day div ke baad enter howa hai wo bhi ek node hai. har ek element me child node hoti hai. usse hame pata chata hai ke aap ne jo parent div banaya hai.
+brwoser behind the secne itna complex tree struture banata hai.
+
+nodelist me sabse pahele 0: text aya yaha par aapne ek enter kiya. enter ko count karraha hai. text elemnt se. phir is ne kiya 1: div.day 
+div.day ka bhi complex tree sturture hai. kya kya cheze null di hai. null isliye ke ham ne koi value nhi di hai. 
+phir uske baad aapne ek aur enter kiya . phir uske baad div.day aaya . phir enter aaya. aisa 9 elemnt ho gaye.
+
+agar ham ne double enter kiya to. html me ek line break count hota hai .magar uske baad kitne bhi enter kare browser use render par nhi jata.
+nodelist me har element ka har ek value ka important hota hai. */
+
+</script>
+</html>

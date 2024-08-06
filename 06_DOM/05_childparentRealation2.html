@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<!--
+ ham div ke under element add karenge script tag ki madad se.
+  -->
+<script>
+    //ham body me kuch bhi creat karna raha to 
+    const div=document.createElement('div')
+    console.log(div);
+
+    /*div element me hame properties add karni hai. kabhi className add karna ho .kabhi id add karna ho. ham ne dekha hai. nodelist me har ek elemnet individualy ek node hai. nodelist me sarry value available hoti hai. magar wo set nhi hoti hai. hame set karna hoti hai. value*/
+
+    div.className= "main";
+    // div.id= "myId"  fun karenge
+    div.id = Math.floor(Math.random() * 10 + 1);
+    //aur attribute add karne ho to. ya custom attribute add karna ho to.
+    //direact ek method hai.
+
+    div.setAttribute("title", 'genrated title')      //attribute hame key value me dena hoga.
+
+    //styling karte hai div par
+    div.style.backgroundColor = 'green'
+
+    div.style.padding = '20px'
+
+   
+
+    //itna ham ne kiya hai. magar ye page pe kyon nhi dikhai deraha hai.
+    //kyon ke div abhi memory ke under hai. page ke uper nhi aya. page pe
+    //kaise attached hoga. jab document jab bolenge is child ko attached 
+    //to karo . to ye attaching kaise hoti hai wo dekhiye.
+
+    //  div.innerText= 'chai aur code'
+
+     //chai aur code div me aa hi gaya lekin. kai jaga aap notes me padenge.
+     //achhe developer bhi bolte hai. ke jaha pe aapko ye option available 
+     //nhi hai. waha id ke under attribute ke under 
+     //div.setAttribute("title", "gernrated title") ye wala option jayda
+     //prifer karte hai. kyun kyun ki [.className ]hai. [.innerText] ye 
+     //override karta hai text ko. jo value hai page par usko lata hai.
+     //aur phir usme aap dusri set karta hai.
+   //magr ye jo setAttribute hai. pahele ye wo value ko lata nhi hai.
+   //ye direactly usme value set karta hai.
+   
+  const addText = document.createTextNode('chai aur code.')
+
+  //textNode creat hogya. ab is node ko add karenge div ke under
+  //div ko bolenge ek append karo ek child ko
+    
+    div.appendChild(addText);
+
+    //finally ham attached karenge document par
+
+    document.body.appendChild(div)
+
+    //aap ka element attchaed hoga bus itna hi kaam hai.
+
+
+    //2nd div
+
+    const div2 =document.createElement("div")
+    console.log(div2);
+    div2.className = "main2";
+    div2.id = Math.floor(Math.random() * 10 + 1);
+    div2.setAttribute("title","genrated tilte");
+    div2.style.backgroundColor = "orange"
+    div2.style.color= 'white'
+    div2.style.padding = '20px';
+    const content = document.createTextNode("chai aur code");
+    div2.appendChild(content);
+
+    document.body.appendChild(div2)
+    
+//ham is traha console se page ke uper kuch bhi element creat kar sakte hai.
+    
+
+</script>
+</html>
