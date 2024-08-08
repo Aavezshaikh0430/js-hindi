@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code | DOM</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+
+    //ek ek li aise creat karke add karte hai.
+
+    // const li = document.createElement('li')
+    // li.innerText = 'python'
+    // console.log(li.children[1]);
+
+    // const qursy = document.querySelector('.language')
+    // qursy.appendChild(li)
+
+
+
+    //hame li me ek aur lang add karni hai. to hame har ek ek lange ke liye 
+    //pura code likne ki jagaha ham ek function banye ge aur us function me 
+    //ham lagneug ke para meter pass karenge 
+
+    //ham ek function banaenge. 
+
+    //hame fucntion me kya karna hai.
+    //sabse pahele hame ek li creat karna hai. 
+    //li me language ka naam add karo
+    //phir hame ul unorderlist ko select karna hai. aur usme hame li ko 
+    //append karna hai. bus inta kam hai. function me
+
+    function addlagnguag(langName) {
+
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}` // 'redux'
+
+        // document.querySelector('.language').append(li)
+        const seclet = document.querySelector('.language')
+        seclet.appendChild(li)
+    }
+    addlagnguag('redux')
+    addlagnguag('python')
+
+    //---------------------------------------------------
+
+    //yaha par ek problem hai iska . hamere list-item(li) ek item hai javascript .jab bhi ham us li me appendchild kardo.
+    // element ko select kar ke kaam me lete hai. to usko sara ka sara tree
+    //form me travel karna padta hai document ke under. 1 tha to chal gaya.
+    //magar 1000 li rahe to problum hoti . aap ek dum end me jana chahte ho.
+    //aur pore ko travel kar ke jana chahte ho.
+    //jitni baar addlanguage() ye method call hoga utni baar tree travel ho raha hai.
+    // to ye acchi baat nhi hai. kai baar optimization issue aa jata hai.
+    //jab bhi larg skill ka project bana rahe hai. to extact same method
+    //defind karrahe hai. magar thoda optimiz approuch ke sath kar rahe hai.
+    //kam to wohi karna hai. magar thoda alag tarike se.
+    
+    // object kaise banaye with details. 
+
+    // function addOptiLang(addLang){
+    //     //li creat karna hai
+    //     const li=document.createElement('li')
+    //     //li me text likna hai.
+    //     const textNode=document.createTextNode(addLang)
+    //     //text ko li se attached karna hai. append karna hai. 
+    //     li.appendChild(textNode)
+    //     //ab li ko class .langauge se attcahed karna hai.
+    //     const lang=document.querySelector('.language')
+    //     //ab li ko attched karenge lang se
+    //     lang.appendChild(li)
+
+
+    // }
+    // addOptiLang('MongoDB')
+
+     function addOptiLang(addLang){
+
+        const li = document.createElement('li')
+        const textNode = document.createTextNode(addLang)
+        li.appendChild(textNode)
+        const lang = document.querySelector('.language')
+        lang.appendChild(li)
+
+    }
+    addOptiLang('MongoDB');
+    
+    //addLanguage aur addOptiLang me kam vahi ka vahi hora hai.
+    //magar 2 function ye diffrence hai ke. addOptiLang ka approuch thoda
+    //optimize hai.kyon ke yaha jo pora ka pora tree hai usko travels nhi 
+    //karna pad raha
+    //aap sedhe ke sedhe ek li creat kiya usme textnode insert kari aur 
+    //sidha kaam hogaya
+
+    //yekin addLanguage me innerHTML use karte hai. to pura ka pura elemnet 
+    //ko travelsing hoti hai. 
+    //halanke basic project me kuch nhi hoga . lekin bade project me
+    //aap innerhtml ke piche mat bhagiye.
+    //hamesha jayen aapendchild ke upper .jab aap bada code likhenge
+    //kisi company me jayenge wo bhi appricheat karnege aapne achi jagaha 
+    //se sikha hai aur aap acchi approuch rakte hai. 
+    
+    //itna hi diffrence hai.
+    //addLanguage me hame ne innerHTML liya.
+    //addOptiLang me hame ne li. me ek child append kiya [li.appendChild]
+
+
+    //---------------------------------------
+
+    //
+
+
+
+</script>
+
+</html>
