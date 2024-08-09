@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+
+<script>
+
+function addOptiLang(addLang){
+
+const li = document.createElement('li')
+const textNode = document.createTextNode(addLang)
+li.appendChild(textNode)
+const lang = document.querySelector('.language')
+lang.appendChild(li)
+
+}
+addOptiLang('python');
+addOptiLang('Typescript');
+addOptiLang('MongoDB');
+addOptiLang('golang');
+
+//---------------------------------------
+
+const secoundLang=document.querySelector('li:nth-child(2)')
+console.log(secoundLang);
+ secoundLang.innerHTML = 'MONGODB'  
+
+//-----------------------------------------------------------------
+
+//yaha ham ne ek nya element bana kar add kardiya li:nth-child(2) me
+
+const scoundLang3 = document.querySelector('li:nth-child(2)')
+console.log(scoundLang3);
+const newli2 = document.createElement('li')
+newli2.textContent = 'Mojo'; 
+scoundLang3.replaceWith(newli2);
+
+//--------------------------------------------------------
+
+//first li javascript hai. use typescript se chang karna hai.
+const firstlang2 = document.querySelector('li:first-child')
+firstlang2.outerHTML = '<li>Typescript</li>'
+
+//---------------------------------------------------------------
+
+//remove
+
+const lastLang = document.querySelector('li:last-child')
+console.log(lastLang);
+lastLang.remove(); //golang remove hoga
+
+//-------------------------------------------------------
+</script>
+</html>

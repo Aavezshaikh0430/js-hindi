@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code | DOM</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    //function addLanguag(langName){
+    //    const li= document.createElement('li')
+    //    console.log(li);
+       
+    //    const setName=li.innerHTML=(langName)
+    //     console.log(setName);
+    //     document.querySelector('.language').appendChild(li)
+    // }
+    // addLanguag('java')
+    //---------------------------------------
+
+    // function addFruit(fruitName){
+
+    //     const li=document.createElement('li')
+    //     console.log(li);
+    //     const fName=document.createTextNode(fruitName)
+    //     console.log(fName);
+    //     const appendFname=li.append(fName)
+    //     console.log(appendFname);
+
+    //     document.querySelector('.language').append(li)
+        
+        
+        
+    // }
+
+    // addFruit('Banana')
+    // addFruit('Banana')
+    // addFruit('Banana')
+
+    function addOptiLang(addLang){
+
+const li = document.createElement('li')
+const textNode = document.createTextNode(addLang)
+li.appendChild(textNode)
+const lang = document.querySelector('.language')
+lang.appendChild(li)
+
+}
+addOptiLang('python');
+addOptiLang('Typescript');
+addOptiLang('MongoDB');
+addOptiLang('golang');
+
+//------------------------------------------------------------
+
+//ab ham jo li hai useme edit karnege
+
+//Edit element.
+
+//edit karne ke liye pahele value select honi bhi to zarori hai. to ham li ko select karte hai.
+//hame li ka 2 value select karna hai. ('li:nth-child(2)') aisa seclect karsakte hai. 
+
+
+//const secoundLang=document.querySelector('li:nth-child(2)')
+
+//hamesha console karna chaihiye is se pata chalta hai. acutal me code hamara chal raha hai ya nhi.
+
+//console.log(secoundLang);
+
+// secoundLang.innerHTML = 'MONGODB' //output: python ki jaga MONGODB
+
+//innerhtml optimize tarika nhi hai.
+//magar hame innerHTML achhi aproch nhi hai. kyon ke wahi phir se hamar code
+//pura tree form me travel hoga.
+//ye method kaam karti hai magar aap kam use kare
+//-------------------------------------------------
+const secoundLang=document.querySelector('li:nth-child(2)')
+console.log(secoundLang);
+ secoundLang.innerHTML = 'MONGODB'   //output: python ki jaga MONGODB
+
+//--------------------------------------------------
+
+//2] secound approch / Edit ki type / secound approch
+
+//ham new element creat karke python ki jaga replace karege.
+
+// const scoundLang1 = document.querySelector('li:nth-child(2)')
+// const newli = document.createElement('li')
+//ab hamene li creat kare ab li me content add karna hai.
+
+// newli.textContent = 'Mojo';   //monogo db se mojo hogaya
+
+//ab add hoga nhi abhi ye hawa me hai. li banaya usme text content add kiya 
+//but kahi par Replace nhi kiya.
+
+// scoundLang1.replaceWith(newli);
+//is tarha se ham li ko replace kar sakte hai.
+
+//aap ke jo senior hai wo method se kaam kare.
+//----------------------------------------------------------------------
+ 
+
+//yaha ham ne ek nya element bana kar add kardiya li:nth-child(2) me
+
+
+const scoundLang3 = document.querySelector('li:nth-child(2)')
+console.log(scoundLang3);
+const newli2 = document.createElement('li')
+newli2.textContent = 'Mojo';  //monogo db se mojo hogaya
+scoundLang3.replaceWith(newli2);
+
+
+//-----------------------------------------------------------------
+
+//first li javascript hai. use typescript se chang karna hai.
+
+const firstlang = document.querySelector('li:first-child')
+console.log(firstlang);
+//aur ek method hai hamare pass outhtml
+
+// firstlang.outerHTML='Typescript' aisa nhi karna hai
+//out put javascript ayenga.
+
+const li =firstlang.outerHTML = '<li>Typescript</li>'
+
+
+//-------------------------------------------------------------------
+const firstlang2 = document.querySelector('li:first-child')
+firstlang2.outerHTML = '<li>Typescript</li>'
+
+//-------------------------------------------------------------------
+
+//remove
+
+const lastLang = document.querySelector('li:last-child')
+console.log(lastLang);
+
+lastLang.remove(); //golang remove hoga
+
+</script>
+<script>
