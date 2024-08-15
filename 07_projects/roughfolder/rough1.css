@@ -1,0 +1,43 @@
+html{
+    margin: 0;
+}
+
+.canvas{
+    margin: 100px auto 100px;
+    width: 80%;
+    text-align: center;
+    background-color: bisque;
+    padding: 50px;
+    height: 274px;
+
+}
+
+span
+{
+    display: block;
+}
+
+.color{
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
+#green{
+    background-color: green;
+}
+#yellow{ 
+    background-color: yellow;
+}
+
+#red{
+    background-color: red;
+}
+
+#white{
+    background-color: #fff;
+}
+
+#purple{
+    background-color: purple;
+}
