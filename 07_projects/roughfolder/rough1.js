@@ -11,32 +11,32 @@ color.forEach(function(color){
         console.log(e);
         console.log(e.target);
         console.log(e.target.id);
-    //    if(e.target.id === 'green'){
-    //     body.style.backgroundColor= 'green'
-    //        canvas.style.backgroundColor = 'bisque'
-    //    }
+       if(e.target.id === 'green'){
+        body.style.backgroundColor= 'green'
+           canvas.style.backgroundColor = 'bisque'
+       }
 
-    //    if(e.target.id === 'yellow'){
-    //     body.style.backgroundColor= 'yellow'
-    //        canvas.style.backgroundColor = 'bisque'
-    //    }
+       if(e.target.id === 'darkorange'){
+        body.style.backgroundColor= 'darkorange'
+           canvas.style.backgroundColor = 'bisque'
+       }
 
-    //    if(e.target.id === 'red'){
-    //     body.style.backgroundColor= 'red'
-    //     canvas.style.backgroundColor = 'bisque'
+       if(e.target.id === 'red'){
+        body.style.backgroundColor= 'red'
+        canvas.style.backgroundColor = 'bisque'
 
-    //    }
+       }
 
-    //    if(e.target.id === 'white'){
-    //     body.style.backgroundColor= 'white'
-    //     canvas.style.backgroundColor = 'green'
-    //     return;
-    //    }
+       if(e.target.id === 'brown'){
+        body.style.backgroundColor= 'brown'
+        canvas.style.backgroundColor = 'bisque'
+        return;
+       }
 
-    //    if(e.target.id === 'purple'){
-    //     body.style.backgroundColor= 'purple'
-    //        canvas.style.backgroundColor = 'bisque'
+       if(e.target.id === 'purple'){
+        body.style.backgroundColor= 'purple'
+           canvas.style.backgroundColor = 'bisque'
 
-    //    }
+       }
     })
 })
