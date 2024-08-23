@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events.</title>
+</head>
+<body style="background-color: #414141; color: whitesmoke;">
+    <h2>Amazing image</h2>
+    <ul id="images">
+        <li><img src="img1.jpg" alt="unable network" width="200px" id="img1"></li>
+
+        <li><img src="img2.jpg" alt="unable network" width="200px" id="img2"></li>
+
+        <li><img src="img3.jpg" alt="unable network" width="200px" id="img3" ></li>
+
+        <li><img src="img4.jpg" alt="unable network" width="200px" id="img4"></li>
+
+        <li><img src="img5.jpg" alt="unable network" width="200px" id="img5"></li>
+
+        <li><img src="img6.jpg" alt="unable network" width="200px" id="img6"></li>
+
+        <li><img src="img7.jpg" alt="unable network" width="200px" id="img7"></li>
+
+        <li><a href="https://www.google.com" style="text-decoration: none; color: wheat;" id="google">google</a></li>
+        
+    </ul>
+
+</body>
+
+<!-- --------------js logic -->
+<script>
+// javascript me jitne bhi events hote hai wo sequncely hi run hote hai.
+//kuch execption hai jo non sequccely run hote hai . ham unhe hi padne aye hai.
+//but javascript sequncely run programing language hai. 
+
+//kai baar ham asequncely programing ko ignor karke jate bhi hai. jaise asyncrunus programing me syncrunus ki jagaha
+//kuch kaam debeat bhi karte hai. phir vapas ata hai.
+
+//aise hi ek expention hai aapke events bhi hai
+//ye event kisi activity par invoke hote hai. jaise aap ne mouse hilaya . keybord press kara.
+//ya mouse hataya . ya draganddrop kiya bahot sare events ki list hai.
+
+//-----------------------------------------------------------
+//1]onclick appraoch
+
+//ab hame 3 imge par onclik event lagana hai to aap simple imge 3 ke under onclick
+//event lagate hai magar ye approch bikul galt to nhi hai magar achi nhi hai.
+//ye fizable approch nhi hai jab scale karnega aapka application tab bahot sara problum hogi is approch me
+//is aaproch avoid hi kare
+
+
+//ha react ka senairio alag hota hai. react ke under ye scaleble code hota hai. jab aap onclick direact button par
+//lagate hai. wo alag freamwork hai javascript ki us ka tention mat lijiye. us se confuse mat hoiye ga.
+//ab ham sirf pure javascript ki baat kar rahe hai.
+
+//<li><img src="img3.jpg" alt="unable network" width="200px" id="img3" onclick = 'alert('img3')'></li>
+
+//------------------------------------------------------------------------
+//2] onclick approch
+// document.getElementById('img3').onclick = function (){
+//     alert('img3 clicked')
+// }
+
+//is approch me koi problem hai kya.
+//to nhi kuch bhi nhi hai problem .
+//magar is approch me bhi problem hai. ye approch dikhne me bahot acchi hai. lekin kya hai. aap id par onclick 
+//event lagate hai. onclick evnet me kuch problum ho sakti hai. aap ko bahot sari information nhi milti hai.
+//to aapko event listner use karni chaihiye. kyon kyonke event listner aap ko sirf onclick functionlity nhi
+//balke propogation ki abebility dete hai. 
+
+//onclick aapko feature kam deta hai.modern zamana modern feature hi use karne chahiye. na.
+
+//-------------------------------------------------------------
+//ab ham kar hai 3rd aur best approch jo abhi ke time market me chal rahi hai.
+//3]addEventListner
+
+//addEventLIstener :=> ye bahot intresting and powerful events hai . eventlistner kya karta hai ye
+//bahot sare events ko listn karta hai.. keybord ke events. ko mouse ke events ko. dreag&drop ko
+//double click events. 
+
+//addeventListner('click', fucntion(){}, false)
+//fasle bhi likhna padta hai. default bhi false hi hota hai.
+//ye thired parameter kisliye hai.
+
+//--------------------------------------------
+//ham ne 3 approch dek liye . aur best approch bhi 3rd vali hi hai.
+
+//early time me ham addeventLIstener ki jaga attchEvent() method ka use karte te.
+//ek time jQuerry ke fan hote te jaise aaj react ke hai. jQury.oneventListner basic hai kaha se js aai
+//hai aur kaha par ja chuki hai.
+
+//jitna aap event (e) ke bare me pade ge utna aap ke liye asan hoga.
+//event ke under kya kya hota hai. ek hota hai pointer event ye ek event hai . is me bahot sari chezze milti
+//hai jaise bubles, button, clint ka x, clint ka y, bahot sari value milti hai.
+//aapko ek srcElement bhi milta hai usme bhi bahot sare event milte hai. event bahot milte hai.
+
+//event kis kis type ke milte hai.
+//mostly aapko milte hai brwoser ke events aur enviroment ke envents .
+//envoiroment ke jasise mouse kaha par cilick howa konsi position thi mouse ki. 
+
+//aapko event ke types konse padna hai.
+
+//types, timestamp:date activity kase change karte hai.,
+
+// defualtPrevented:default jo behaivour jo hota hai. use kaise change karte hai. jab aap form
+//fill karte ho to submit karte hai to event ko bolte hai. defualt prevent kar do to form 
+//submit na ho jaye .  
+//yaha tak ke aapke anacer tag hote hai. waha par bhi unka kaam hai click kara aur navigate hogaya.
+//to aap wo navigation bhi aap rok sakte hai
+//jo bhi default behaviour hai jo bhi tag ka use ham rok sakte hai.
+
+//target
+
+//toElement
+
+//srcElement 
+
+//currentTarget,
+
+//clint ki position kya hai clintX, clintY, screenX, screenY,
+
+//altKey, cntrlKey, shifKey, keyCode, :user ke keyBored speed pata lagasakte hai. project bana sakte hai.
+//--------------------------------------------------------------------
+
+//ab ham event propogation ke bare me baat karte hai. ye event propogation hota kya hai
+//ye hamara 3 parameter false hai, use ham true karte hai. true karne ke baad bhi aapko itna sa bhi
+//difrence nhi dekhenga.
+
+//to event propogation hai kya.
+//event proposgation ka 2 context hota hai.
+
+//1] ek hota hai event bubling.
+//2] ek hota hai event capturing.
+
+
+
+// document.getElementById('img3').addEventListener('click',function(e){
+//     console.log('img3 click');
+// },false)
+//imgae 3 ke under click karenge to upper wala code run hoga.
+
+
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log('clicked inside a ul');
+// },false)
+//imgas ke under jab click karenge.to upper code run hoga.
+
+//ye do code ham ne exactly same likhe hai. magar target hame ne diffrent liye hai. 
+//interesting baat ye hai konsa element kab print hoga.
+
+
+//intresting baat ye hai ke jab aap img3 ke under click karenge . to kya hoga.
+//img3 bhi to images ke under hi hai to konsa element pahele run hoga.
+//ul ke under li hai li ke under image hai.
+//jab aap imga3 ko clik kar rahe hai to wo bhi ul ke under hi to hai.
+
+//---------------------------------------------------------------------------
+
+//sara ka sara khel hai bublinggum ka bubble kya hai niche se upper jata hai.
+//to aap ne inner element par click kiya. jo ki imgaes tha uske baad li tha . uske baad ul hai.
+//jo bhi element hai ya jo bhi script aapki track kar rahi hai bade element ko inside se outside.
+//wo hhota hai event propgation usko bolte hai bublling
+
+//-------------------------------------
+
+//--------------------------------------------------------------------
+//2] capturing mode.
+
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log('clicked inside a ul');
+// },true)
+
+// document.getElementById('img3').addEventListener('click',function(e){
+//     console.log('img3 click');
+// },true)
+
+
+
+//jab ham 3rd para meter true karte hai to 
+//capturing jata hai top se bottom pe.
+//to aapka pahele ayenga clicked inside a ul
+//phir ayenga aapka img3 click.
+//
+
+//konas use case wrong nhi hai. aapke use case par hai konsa approch aapko applye karnga hai.
+//---------------------------------------------------------------
+
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log('clicked inside a ul');
+//     e.stopPropagation()
+// },false)
+
+// document.getElementById('img3').addEventListener('click',function(e){
+//     console.log('img3 click');
+//     e.stopPropagation()
+// },false)
+
+//e.stropropagatin se aapka event buble hoke uper nhi jayenga.
+
+//----------------------------------------------------------------------
+
+//e.prevntDefault ko dekhte hai.
+
+//anchor li google prenvetdefualt change karte hai.
+//a tag hame google par bhej raha hai.
+//usse ham ancher tag ka behaivour ko change karte hai.
+
+//false event bubling forment me ho.
+
+document.getElementById('google').addEventListener('click', function(e){
+    console.log('google clicked');
+    
+    e.preventDefault();
+    // e.stopPropagation();
+    //stop propagation stop hoga 
+    //click inside a ul  ye out nhi ayenga. evnet ke bubling bhi nhi hogi.
+},false)
+
+
+//basic hogaya cover 
+//----------------------------------------------------------------------------------------------
+
+//ham chota sa ek example lete hai.
+//jitne bhi li hai events hai mai is pe click karo aur ye gayab ho jaye. itna sa kaam hai.
+
+//ham li ko target nhi karnege.
+//balke uske parent ko target karenge. isliye ke li agar 100 200 rahe to ham ek ek 
+//karke kab tak li ko select kareng balke uske parent ul ko hi select karenge.
+
+document.querySelector('#images').addEventListener( "click", function(e){
+// console.log(e.target.parentNode);
+
+//parentNode to hame image thodi remove karni hai. hame to pura li remove karna hoga.
+//image remove karenge. to image remove hogi par li ki bullet to rahe jayengi. wo ham 
+//nhi chahte. isiliye ye jo target hogaya uska hame parentNode chahiye.
+
+//to ab hamare pass pura <li></li> agaya
+
+//ab isko hatao kaise
+
+// let removeIt = e.target.parentNode
+// removeIt.remove();
+
+//2] method
+
+// removeIt.parentNode.removeChild(removeIt)
+//ye thoda sa confusing vala hai.
+//jab ham removeIt ka parent do to usne mujhe li se ul diya.
+//phir maine us ul se removechild bola konsa to removeIt.
+//--------------------------------------------------------------
+
+//ye removeIt me ek problum hai jab ham google par click karenge. to sabkuch remove ho jaynega.
+//image par click kara to thik hai.
+// lekin aap list item par click kiya to. 
+//list item[li] ka parent kon to uska ul[unorderlist] hai.
+//ya aap ke parent node me aya kya li ka parent ul to aap ne kaha 
+//us parentNode ko remove kardo.to aapki pori li hi remove hogayi.
+//aisa to nhi karna hai.
+//------------------------------------------------------------------------
+
+//to ham yaha strick checks laga sakte hai.
+
+console.log(e.target.tagName);
+
+
+if (e.target.tagName === 'IMG') {
+    console.log(e.target.id);
+    
+    let removeIt = e.target.parentNode
+    removeIt.remove()
+    
+}
+
+}, false)
+
+
+
+
+
+
+</script>
+
+</html>

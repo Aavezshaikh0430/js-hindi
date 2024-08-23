@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur javascript</title>
+</head>
+<body>
+    <h1 id="firsth1">Chai aur Code.</h1>
+    <h1 id="secondh1">2 heading</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    /* sabse pahele ham dekenge ke hamar settimeout aur setinterval ye function hote kaise hai.
+    setTimeout ek method bhi hai jo ek API ko call karta hai. 
+
+    ham console me window ke under jate hai.
+    window enter karna hai console me.
+    ye core function nhi hai ye browser ke through milne vale function hai.
+
+    ye settime out core javascript ke part nhi hai. javascript engine me 
+    aapke pass merory heap aur callstack hai. ye jaise hi call hota hai wo bahar jata hai. phir event queue ke through phir se axis milta hai. ye dono ka 
+
+
+    setTimeout par jaise hi crusour le jaonge to. isse chahiye sabse pahele handler. ye handler, callback, function ye almost hai hi ek jaise . kis ka naam hai kissi ka refrence hai to kissi ka nhi hai.
+
+    handler ek call back hi hai. function hi jis ka naam nhi hai. basically itna hai. hosakta ho function kahi aur likha ho uska refrence mila ho.
+    wo bhi thik hai ek hi baat hai.
+
+    2] hai uska time out jo ki ek number me milata ho.
+
+
+     setTimeout(function(){
+    console.log('Aavez');
+    
+   }, 2000)
+   ab mera naam 2 secound baad print hoga . ab ham kitni hi deer tak wait karenge magar ye naam ek hi baar print hoga. kyon ke ye settimeout jo ye function hai. jis ka naam hai timeout aap time lerahe ho ke itne time do uske baad ye kaam karenge. mujhe 2 secound ka time do phir mai ye kaam karnoga. settime bolta mai itna time do mai sirf ek baar hi aapka kaam karonga.
+   -------------------------------------------------
+
+    const sayAavez = function(){
+    console.log('Aavez');
+    
+   }
+
+   ab hame ne set time out ko refrence diya.
+   exicute nhi karan hai. handler hai na to refrence digiyenaga. exicute nhi karna hia.
+   exicute nhi karna hai setTimout(sayAavez(), 2000);
+   exicute karne se do 2 secound tak fucntion rukenga nhi direct print hoga. exicute karne par.
+
+     const sayAavez1 = function(){
+        console.log("another say aavez");
+        
+    }
+
+    setTimeout(sayAavez1(), 2000) sayAavez ka refrence dena hai exicute nhi karna.
+    
+ 
+
+   
+    */
+
+  
+
+    const sayAavez = function(){
+    console.log('Aavez');
+    
+   }
+   setTimeout(sayAavez, 2000)
+
+   /*
+   kya ham h1 ka naam change kar sakte hai kya. chai aur code ki kis jagah. Best javascript series . likh sakte hai kya bikul change karsakte hai.
+   */
+
+//    document.querySelector('h1').innerHTML = 'Best Js series'
+
+//magar me nhi chahta. mai 2 secound baad h1 change ho jaye.
+
+const changeH1 = function(){
+    document.querySelector('#firsth1').innerHTML = 'Best js Series.'
+}
+
+setTimeout(changeH1, 3000);
+
+//--------------------------------------------------------------------
+// const secondh1 = function(){
+//     document.querySelector('#secondh1').innerHTML= 'chai aur code with hithesh Sir'
+// }
+
+//clearTimeout() is traha se exicute nhi hota hai. isko bhi chahiye refrence to 
+//setTimeout(secondh1, 3000) ko hatana chahte hai. uska refrence lena padenga.
+//settime out ko  ek variable me hold karneege. phir uska refrence ham clearTimeout ko denge to ham us change hone wali value ko rukh sakte hai.
+
+// const changme = setTimeout(secondh1, 3000)
+//ab aap ne ek settimeout laga to ye sochne ki baat hai. mai isse rukh bhi sakta hu. to mai kaise usse ruk lo. 
+//agar utni deer ke wo event nhi hogaya to use mai ruk lo. ye stop button isiliye diya howa hai.
+//mai stop button par click karo to wo text chai aur code hi rahe. to ek cleartimeout bhi hota hai.
+
+
+
+// clearTimeout(changme);
+
+// const changeText =function(){
+//     document.querySelector('#secondh1').innerHTML = 'Change the Text '
+// }
+
+// setTimeout(changeText, 2000)
+
+//ab is change hone wale text ko rukna hai.
+
+// const stopChagne=setTimeout(changeText,2000)
+
+// clearTimeout(stopChagne)
+
+
+//is traha se lagane me koi faida nhi settimeout lagaya aur uske saat clear time out bhi lagaya. settimeout lagana ka kya faida. 
+
+//to ham ek event par clear time out lagayenge.
+
+//clear timeout par hate hai aur usse event par lagate hai. event konsa hai click.
+
+// document.querySelector('#stop').addEventListener('click',function(){
+    
+//         //is me ham clearTimeout lagate hai.
+        
+//         clearTimeout(stopChagne);
+//         console.log("stopped");
+        
+    
+
+// })
+//-------------------------------------------------------------
+const changetext2 =function(){
+    const changetext = document.querySelector('#secondh1').innerHTML = 'Change The Text'
+}
+
+const stopSetTime=setTimeout(changetext2, 5000)
+
+document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(stopSetTime)
+    console.log('click button');
+    
+
+})
+//-------------------------------------------------------------
+
+</script>
+</html>

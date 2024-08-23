@@ -112,7 +112,7 @@ new game aap ne phir se game start kiya.
 //parseInt(math.random()*100+1)= 45
 
 
-const randomNumber =parseInt(Math.random()*100+1)
+let randomNumber =parseInt(Math.random()*100+1)
 
 
 //bahot sari value ko lena hai document me.
@@ -330,7 +330,7 @@ function checkGuess(guess){
 
 function displayGuess(guess){
     userInput.value = ''
-    guessSlot.innerHTML +=  `${guess}`
+    guessSlot.innerHTML +=  `${guess} ,`
     numGuess++;
     remaining.innerHTML = `${11 - numGuess}`
 }
@@ -351,3 +351,138 @@ function displayMessage( message){
 //---------------------------------------------------------------
 
 //ab baat aati hai endGame or newGame ki
+
+//chaliye ab check karte hai. hamar project work to kar raha hai 
+
+//hamra project work to kar raha hai. magar jo
+//privious guess me har number ke baad hame space chaihye
+
+// guessSlot.innerHTML +=  `${guess}`
+//guessSlot.innerHTML +=  `${guess}  `
+//aisa ham space de sakte hai.
+
+//----------------------------------------------------------
+
+
+//imp
+/*
+//ab ham end game aur new game par focus karte hai.
+
+//end game karna raha to sabse pahele jitne bhi input feild hai unko clear 
+//kar digiye.
+//userINput me vlaue clean kardo
+//userInput.value = ''
+//ye hogai value clean.
+
+//ab kya kariye userInput me aur value add na kar pa sake.
+//wo kaise karenge.
+//wo userInput hai . us me ek attribute set kare. set attribut kaise kare
+//userInput.setAttribute()
+//konse attribute set karna hai. 
+//disabled attribute set karenge. disabled akle set nhi hote hai. key value pair me set hote hai.
+//vaise to input me disabled likne se chalta hai magar
+//set attribute me hame key value pair me disabled karna padta hai.
+//set attribute me secound parameter hai us me kuch bhi add mat kijiye.
+//key value pair hai to aap ka kaam hogaya.
+//ye hogaya hamara end game.
+
+//userInput.setAttribute('disabled', '')
+
+//ab kya kariye hame ek start button bhi to add karvana hoga. to kya kariye wo jo 
+//ek paragraph hai usme ek class list add kara lete hai.  .dot add uske under add kara 
+dete hai ek button. to vo button ki tarah behave karne lagega. ab us paragraph me bhi ek
+innerHTML add karna hoga. innerHTML me <h2 id = 'newGame'>start new game</h2> karate hai. 
+abhi ye button hawa me hai .
+
+ab kya karna hai hame ne ek startOver bhi liya tha. jo result para le rahe the. resultpara me ek 
+appendchild add karenge konsa naya child add karnege. paragraph add karenge.
+ab easily resultpara me paragraph available hai.
+itna to kaam hogya
+
+ab playgame ko bhi change karna hai. iske bagir kuch nhi hoga.
+to play game ko false kardijiye.
+
+ab iske baad new game chal jaye. 
+new game kab chalenga.
+
+ background-color: #141414;
+    color: white;
+    width: 250px;
+    height: 50px;
+  border-radius: 25px;
+  font-size: 30px;
+  border-style: none;
+  margin-top: 30px;
+*/
+function endGame(){
+    userInput.value = '';
+    userInput.setAttribute('disabled', '')
+    p.classList.add('button');
+    p.innerHTML= '<h2 id="newGame">start new Game</h2>';
+    
+    
+    
+    startOver.appendChild(p)
+    playGame = false;
+    newGame();
+}
+//-----------------------------------------------------------
+
+/*
+ab new game vala hame kaam karna hai. itna game to chal raha hai.
+
+sabse pahele button ka refrence lete hai. wahi document.qureslector('#newGame')
+
+//new game button aya hai to usepe listen to karna padenga. wahi simple si kahani
+addevnetlistner click, fucntion  (e){}  evnet to agaye apke pass is event ka intan kaam nhi
+hame hamere variable reset karne hai sirf click pe
+main kahani vahi hai.
+
+pahele sare variable reset karnega.
+to sabse pahele naya random number lena padenga.
+
+preivous guess hai use ek ek karke reset karne ki zarorat nhi hai
+prevGuess =[] lo ho gaya reset. jitne bhi privous value de thi vo rest ho gayi.
+ab uske baad kya karna hai
+
+aapke no of guess hai
+numGuess usko bhi start kariye ga 1 se
+numGuess = 1
+
+aur jo guessSlot hai usko bhi reset kariye ga.
+guessSlot.innerHTML= ""
+
+remaining bhi hatana padenga. ye jo remaining hai hamare pass is ke under jo innerhtml hai
+iske underkya kariye
+remaining.innerHTML = '${11 - numGuess} '
+
+userInput se reomoveattribut ko disable hatana hai. disbaled ko bhi hata diya.
+
+startOVer bhi tha. usme removechild() bhi karna tha  wo child jo hame paragraph add kiya tha use bhi hatana padenga. paragraph hata dijiye jo add kiya tha.
+
+uske baad playgame to true kardijiye ummed hai aapka game chalue ho jayenga.
+
+kaafi lengthy tha magar diffcult nhi
+--------------------------------------------------------------------------------------
+*/
+
+function newGame(){
+    const newGameButton = document.querySelector('#newGame');
+    newGameButton.addEventListener('click', function(e){
+
+        randomNumber =parseInt(Math.random()*100+1)
+        prevGuess =[]
+        numGuess = 1
+        guessSlot.innerHTML = ''
+        remaining.innerHTML = `${11-numGuess}  `
+        userInput.removeAttribute('disabled')
+        startOver.removeChild(p)
+
+        playGame = true
+      
+        
+    })
+}
+
+
+
