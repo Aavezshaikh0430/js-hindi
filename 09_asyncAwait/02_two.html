@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="firsth1">Chai aur Code.</h1>
+    
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+
+//    const chngeheading = function(){
+//     document.querySelector('#firsth1').innerHTML = 'Changed Heading ';
+//     console.log("hello i am aavez");
+    
+//    }
+//    const stoptime=setTimeout(chngeheading, 1500);
+
+//  document.querySelector('#stop').addEventListener('click', function(){
+//     clearTimeout(stoptime)
+//     console.log('button click');
+    
+//  })
+//---------------------------------------------------------------------------------
+
+/*
+new method ki baat karte hai. setInterval inka kuch aisa hi kaam hai. ek handler hai aur ek timeout . magar iska kaam thoda alag hai.
+
+setInterval(function(){}, 1000)
+ek fucntion hai usse ek secound baad kaam karo
+
+*/
+
+// setInterval(function(){console.log('aavez',Date.now());},5000)
+
+//har ek secound baad aavez print hoga. exact date ke saat. ye aavez constantly print hota howa dekhenga. ye event chalta hi jayenga. 
+
+
+// const sayTime = function(){
+//     console.log('aavez', Date.now());
+    
+// }
+// //fucntion refrence pass kariye 
+// setInterval(sayTime, 4000)
+
+//isme ham 3rd para meter bhi set kar sakte hai.
+
+//----------------------------------------------------------------
+
+const sayDate = function(string){
+    console.log(string, Date.now());
+    
+}
+// setInterval(sayDate, 3000, 'Aavez')
+
+//3rd parameter bhi hota hai iskeunder.
+
+/*
+ye chale hi jaraha hai. obeously to isko bhi rok sakte hai.
+to setInerval hai usi traha clearInterval bhi hai.
+
+to ham setInterval ko varibale me store karte hai.
+*/
+
+const intervalId =setInterval(sayDate, 3000, 'Aavez')
+clearInterval(intervalId)
+//---------------------------------------------------------------
+
+//target ye tha 2 button ka ke aap ye kaam kare jaise mai start button press kare
+//yaha par printing start hojaye.
+//jaise me stop karo wo stop ho jaye.
+
+// let start;
+// document.querySelector('#start').addEventListener('click',function(){
+//      start = function(){
+//         console.log('click start');
+//         console.log('aavez',Date.now());
+//         }
+//      setInterval(start, 2000)
+// })
+
+// document.querySelector('#stop').addEventListener('click',function(){
+     
+//      const stopInerterval=setInterval(start, 2000)
+//      clearInterval(stopInerterval);
+//      console.log('click stop butn');
+     
+// })
+
+//-----------------------------------------------
+
+// const startCountdown = function(){}
+
+// const stopCountdown = function(){}
+
+// document.querySelector('#start').addEventListener('click', startCountdown)
+
+// document.querySelector('#stop').addEventListener('click', stopCountdown)
+
+//-----------------------------------------------------------
+
+let intervalId2;
+
+const startCountdown = function(){
+    intervalId2 =setInterval(start, 2000)
+    function start(){console.log('aavez',Date.now());
+    }
+}
+
+const stopCountdown = function(){
+    clearInterval(intervalId2)
+}
+
+document.querySelector('#start').addEventListener('click', startCountdown)
+
+document.querySelector('#stop').addEventListener('click', stopCountdown)
+
+
+
+
+</script>
+</html>
