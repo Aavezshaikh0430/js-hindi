@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Change color</title>
+</head>
+<body>
+    <h1>Start should change the Backgorund color every secound.</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+
+    /*
+    project hai random color genrate karna hai. hexcode ka . start buttonn press kare to color automatically
+    genrate ho. aur stop par click kare to color change hona stop ho jaye .
+    
+    1]sabse pahele random color genrate karna hai.
+    
+    */ 
+   //randomColor ek function hoga hamare pass
+
+  // const randomColor = function(){
+//     //sabse pahele hex value honi chahiye.
+//     //hex value kaha tak jati hai .
+//     //hex value 0 se 9 tak jati hai. aur ABCDEF tak jati hai. ye hoti hai hexvalue
+  //  const hex = '0123456789ABCDEF';
+
+//     //const nhi let lete hai varna change nhi. const se hame change nhi karne ayengga.
+//     //const se ham value ko axis nhi kar sakte is liye let liye
+//     //color # se start hota hai.
+//     //pulse equal ka use kar ke uskeunder value dalonga.
+
+   // let color = '#';
+
+   // for (let i = 0; i<6; i++) {
+        
+   //     color += hex [Math.floor(Math.random()*16)]
+        //+= value # constantly add karni hai hame 
+        //# already add hona sabse pahele
+        //color genrate to kiya magar use baher bhi to nikalna hai.
+ //   }
+   // return color
+ //  };
+
+//    //random value genrate karni hai hame
+// //    console.log(Math.floor(Math.random()*16)); hex me 16 value hai boleke 
+   
+
+    //console.log(randomColor()); //check bhi to karna hai.
+
+//-------------------------------------------------------------------------------------
+
+const randomColor = function(){
+    const hex = '1234567890ABCDEF';
+    let color = '#'
+
+    for(let i = 0; i < 6; i++){
+        color += hex[Math.floor(Math.random()*16)]
+    }
+    return color;
+}
+
+// console.log(randomColor());
+
+//------------------------------------------------------------------------------------------
+//ab mujhe chahiye start aur stop button ka refrence.
+
+// const startChangingColor = function(){};
+
+// const stopChangingColor = function(){};
+
+// document.querySelector('#start').addEventListener('click',startChangingColor);
+
+// document.querySelector('#stop').addEventListener('click',stopChangingColor);
+
+//ye method hai.
+
+//---------------------------------------------------------------------------------------------
+
+
+//background ka color change karna hai start button se 
+//bahot asan hai document.body.style.backgroundcolor = randomcolor(); 
+//randomcolor ko exicute karadiya bahot asan hai.
+
+// const startChangingColor = function(){
+//     document.body.style.backgroundColor = randomColor();
+// };
+
+/*
+problum ye hai ye contiously nhi chal raha hai. contiously chalne ke liye is hame set Interval method 
+me dalna hoga.
+*/
+
+
+
+let intervalId;
+const startChangingColor = function(){
+    
+   
+// setInterval(changeBgcolor, 1000)
+    //ab hame change color ko rukna bhi hai to. 
+    // setInterval(changeBgcolor, 1000)ko ek variable me store karte hai.
+    if(!intervalId){
+        intervalId = setInterval(changeBgcolor, 1000);
+
+    }
+
+    //yaha ek aur method banani hogi jisme document.body.style.backgroundColor = randomColor(); 
+    //ye method me rakhni hogi.
+    //isko ek fucntion me rakhna hoga phir uske uper setinteral apply karna hoga.
+    function changeBgcolor(){
+        document.body.style.backgroundColor = randomColor();
+        // console.log(randomColor()); console me random number ka code aara ha hai
+        
+        
+    }
+    
+
+   
+     
+     
+    
+};
+
+const stopChangingColor = function(){
+    clearInterval(intervalId)
+    intervalId = null
+    //Uncought
+    //refrecne error: intervalId is not defined.
+    //is liye hame ne intervalId ko fucntion ke bahar 
+    //daclare kare. jis se wo dono fucntion me axis ho raha hai. 
+};
+
+document.querySelector('#start').addEventListener('click',startChangingColor);
+
+document.querySelector('#stop').addEventListener('click',stopChangingColor);
+
+
+/*project me corner cases aate hai. aur corner cases hi seekhna project hai. sirf project karna hi nhi . is liye kahete hai lead code me aapke question  aur log itne intellignet kaise hojate hai. kyon ke wo edge cases ke bare me sochne lag jate hai. kuch log lead code me hi edgeses sochte hai. real project me sochna band kardete hai.*/
+
+//project start bhi horaha hai aur stop bhi horaha hai.
+
+//problum kya hai aap jo intervalId hai. isko baar baar override karrahe hai vlue ko.
+//kai casese me sab me nhi . 
+//aur cleaner code likho,  
+//jaise clearInterval(intervalId) ko flushOut karo , flushOut means  ye jo
+//intervalId hai usko set kardo null
+
+//clearInterval(intervalId)
+//intervalId = null;
+
+//aapne kiya kuch nhi aap ne code ko clean bana diya. toda sa proffesionalis add kiya
+//jaise hi IntervalId ka kaam hogay usse ham ne clear kar diya.
+//intervalId ki value ko derefrecnce kar diya.
+//memory free kardete hai.
+//-------------------------------------------------------------------
+
+//intervalId null karne se stop button work hi nhi karraha hai .
+
+//aur intervalId null nhi karte hai to start button work karraha hai aur stop button bhi work karraha hai.
+//ham sochenge ke thoda clean code ki kya practice kare. hamra kaam hi khrab ho gaya.
+//kya chod de isko. nhi aise chodete nhi hai.
+
+//actually apka code bhi sahi hai . aur cleanup process bhi sahi hai. agar apke varible ke refrecne use me
+//nhi aaraha to null kare. jisse automatically memory space free hojaye.
+//ye sab thik hai
+
+//hame code me thoda change karna hoga . thoda modifiy karna hoga.
+//hame check karna hoge. 
+//jaise value null ho jati hai. tab hame set interval chalana hai. detect to karna hoga.
+//aise null ko to refrecne nhi lesakte. kyon ke interval id me kuch bhi nhi hai.
+//null ki jaga :=setInterval(changeBgcolor, 1000); aap ye value daal rahe hai.
+//aisa nhi hota uska kuch chex hota hai.
+
+//conditional check lagaye.
+
+//-----------------------------------------------------------------------
+
+// const startChangingColor = function(){
+   
+//     function changeBgcolor(){
+//         document.body.style.backgroundColor = randomColor();
+//        }
+//     intervalId = setInterval(changeBgcolor, 1000);
+//      intervalId = null
+    
+// };
+//-------------------------------------------------------------------------------- ye code ki jagaha.
+
+
+//if(){} lagaye.
+
+// const startChangingColor = function(){
+   
+//     function changeBgcolor(){
+//         document.body.style.backgroundColor = randomColor();
+//        }
+//     if(!intervalId){
+//         intervalId = setInterval(changeBgcolor, 1000);
+//     }
+     
+    
+// };
+
+//------------------------------------------------------------------------------ye code likhe
+
+
+</script>
+</html>
