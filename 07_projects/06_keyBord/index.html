@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event keyCodes.</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        table,th,td{
+            border: 1px solid #e7e7e7e7;
+        }
+        .project{
+            background-color: #1c1c1c;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .color{
+            color: aliceblue;
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="project">
+        <div id="insert">
+            <div class="key">Press the key and watch Magic</div>
+        </div>
+    </div>
+    
+</body>
+
+<script>
+    //insert div ke under ek table add kare .
+    //insert ka refrence ligiye aur jaise hi kuch bhi ho . usme HTML add kare.
+    //take jo bhi key press ho wo aapko dikh jaye.
+    
+    //insert ka refrence lenge.
+
+    const insert = document.getElementById('insert');
+
+    //ab mujhe pori window ke uper hi addeventListner lagana hai.
+
+    //click ho ya keydown ho kaam to ek hi horaha hai.
+
+    window.addEventListener('keydown',(e)=>{
+        //inset jo tha refrence is ke innerhtml ke kuch value add karani hai.
+        //inner html me ek table add karani hai.
+        insert.innerHTML = `<div class = 'color'>
+            <table>
+                <tr>
+                    <th>key</th>
+
+                    <th>keycode</th>
+
+                    <th>code</th>
+
+                </tr>
+
+                <tr>
+                    <td>${e.key === " " ? 'Space' : e.key}</td>
+                    
+                    <td>${e.keyCode}</td>
+
+                    <td>${e.code}</td>
+                
+                </tr>
+                
+                
+            </table>
+            </div>`
+
+            //jab ham space enter karene to space print nhi ho raha hai. space print ke liye hame
+            //kuch contional lagan hoga 
+            //  <td>${e.key}</td>
+            //is ki jagaha hame
+
+            //agar value empty hai to space print karo varna e.key print karo 
+
+            //<td>${e.key === " " ? "Space" : e.key}</td>  //ternery oprator
+    })
+</script>
+</html>
