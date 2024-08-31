@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .card{
+            width: 500px;
+            height: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+        .container{
+            padding: 2px 16px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: #ffff;">
+
+    Value State Description
+    0 UNSENT Client has been created. open() not called yet.
+    1 OPENED open() has been called.
+    2 HEADERS_RECEIVED send() has been called, and headers and status are available.
+    3 LOADING Downloading; responseText holds partial data.
+    4 DONE The operation is complete.
+
+    <div class="card">
+        <img src="img_avatar.png" alt="avatar" style="width: 100%;">
+
+        <div class="constianer">
+            <h4>John Doe</h4>
+            <p>Architext & Engineer</p>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    /*
+    api ek talking system hai 2 languages ke beach me. ye 2 system frontend aur backend bhi hosakte hai.
+    ya ye backend kisiaur ka aur frontend hamara bhi ho sakta hai. hosakta frontend kisi aur ka backend
+    kisi aur ka.
+
+    2 system apas me baat karna chahte hai. 1 java me likha ho . aur 1 javaScript me likha ho.
+    1 ruby me likha ho . ek php me likha ho. dono ko apas me jodne ka madhaym jo hota hai wo API
+    ka hota hai.
+
+    -------------------------------------------------
+
+    ham salo se kaise requeset karte aye hai. ab fetch aya hai . by the way fetch naya hai. 4 se 5 saal
+    hogye fetch ko aye hoye magar ham . usse pahele bhi API request hoti thi. 
+    waha ham XMLHTTP request bhejte the.
+    ye XMLHTTP bada hi lagacy hai. aaj bhi kaam karta hai. use kam karte hai. kaisa hai developer porana janne
+    ke bajaye. porana lagacy code manitain koi karta nhi hai. unko pata hi nhi porana kuch aisa bhi hota tha.
+
+    XMLHTTP ye bahot hi intresting aur powerful hai. ye XMLHTTP ye apne aap me bahot hi intersting chez hai.
+    kafi fream work me abhi bhi use hoti hai.
+
+    ---------------------------------------------------------------------------------
+    XMLHTTP request is used heavily in AJAX programming.
+
+    EventTarget <- XMLHTTPRequestEventTargeet <- XMLHTTPRequest
+    -----------------------------------------------------------------------------------------
+
+    Ajax
+
+    asynchronuous javascript and xml , or Ajaz, is not a technology in itself, but rather an approach
+    to using a number of exisiting technology together, including html or xhtml, css, javascript,
+    Dom, xml, xslt, and most importantly the XMLHTTP Request objct.
+
+    asynchrounous aur javascript ke under ye programing hoti thi isiliye isse ajax bolte the.
+
+    aaj bhi jin ko bhi Ajax ata hai unki asynchronous programing bahot acchi hoti hai.
+
+    abhi to hamare pass async await hagaye magar pahele nhi hote the.
+
+    //-----------------------------------------------------------------------------------------
+
+    XMLHTTP request me ready state hoti hai.
+
+    aapke pass 5 traha ke state hoti hai. 
+    
+    0 raha to aapne kuch request send hi nhi kari hai.
+
+    1 rahato aapne request bhej di hai. but bhejna
+    hi thoda kaam hai. wapas bhi to data aana chahiye. aap ne sirf request open kari aur bhej di.
+
+    2 raha to headers recived hai. uske header to aagaye lekin status nhi aya. data mila hai ya 
+    nhi mila hai. request kho gai kuch to aya hai. pata nhi kya aya hai.
+
+    3 state hoti hai loading ki obeaously responce to aya hai.kitna bada data hai.pora agaya ya nhi agaya
+    ye sab .state ke through hi maintain hota tha. aaj bhi state ke through hi maintian hota hai. 
+    aap ke react me state ke through hi maintain hota hai.but ab ye number band hogaye ab directly call hote hai.
+    itna sa diffrence hai.
+
+    jaise hi status aapka 4 hota hai. opration complete hogaya data hamari traf se ja juka hai. aap deklo 
+    aapko mila hai ya nhi mila hai. konsa responce code mila hai. kya howa hai. wo aapki  jimmedari hai.
+
+    --------------------------------------------------------------------------------------------------------
+    ye hogaya hamara basic.
+    
+    */
+
+    /*
+    sabse pahele aap xmlhttprequest banate hai.
+    xmlhttprequest ye apne aap me ek method hai. is sari ready state hoti hai. isi ki through aap apna data send aur recieve 
+    kar sakte ho ye sabse jayda use hota hai. is ka ek mehtod hota hai. 
+    aap kahe sakte ho ye almost ek class hai. usko object banana padta hai new keyword se  
+    
+    */
+
+    //-------------------------------------------------------
+
+    // const requestURL = "https://api.github.com/users/hiteshchoudhary"
+
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('GET', requestURL);
+    // console.log(xhr.readyState);
+
+
+    // xhr.send()
+    //------------------------------------------
+
+    const requestURL = "https://api.github.com/users/hiteshchoudhary"
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL);
+
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+
+        if (xhr.readyState === 4) {
+            // console.log(this.response);
+            // const data = this.response;
+            const data = JSON.parse(this.response)
+
+            console.log(typeof data);
+
+            console.log(data);
+            console.log(data.avatar_url);
+
+            document.querySelector('.card img').setAttribute('src' , `${data.avatar_url}`);
+            document.querySelector('h4').innerHTML = `${data.name}`
+            document.querySelector('p').innerHTML = `followers : ${data.followers}`
+
+
+
+
+        }
+
+    }
+    xhr.send()
+
+
+
+</script>
+
+</html>
