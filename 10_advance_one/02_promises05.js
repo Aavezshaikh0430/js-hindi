@@ -4,17 +4,17 @@ promise five bhi apne aap me intresting hai.
 
 */
 
-const promiseFive = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        let error = false;
-        if(!error){
-            resolve({username : 'Java_script', password : '123'})
-        }
-        else{
-            reject('Error : Js went wrong.')
-        }
-    },1000)
-});
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = false;
+//         if(!error){
+//             resolve({username : 'Java_script', password : '123'})
+//         }
+//         else{
+//             reject('Error : Js went wrong.')
+//         }
+//     },1000)
+// });
 
 /*
 abhi tak aap ne jo syntex dekha jab aapke pass promis aye to 
@@ -113,15 +113,44 @@ greacefuly error handle hogaya hamare pass.
 */
 
 
-async function consumPromiseFive() {
-   try {
-    const response = await promiseFive
-    console.log(response);
+// async function consumPromiseFive() {
+//    try {
+//     const response = await promiseFive
+//     console.log(response);
     
+//    } catch (error) {
+//     console.log(error);
+    
+//    }
+    
+// }
+// consumPromiseFive();
+
+//---------------------------------------------------------
+
+//eg
+
+const jspromise = new Promise (function(resolve, reject){
+  setTimeout(function(){
+    let erro = false;
+    if(!erro){
+        resolve({username : 'Mohammad owiase', email : 'MdOwaise@gmail.com'})
+    }
+    else{
+        reject('ERROR: something went wrong pleas try again.')
+    }
+  },1000)
+});
+
+async function consumeJsPromise (){
+   try {
+    const respons = await jspromise
+    console.log(respons);
    } catch (error) {
     console.log(error);
     
    }
     
 }
-consumPromiseFive();
+consumeJsPromise();
+
