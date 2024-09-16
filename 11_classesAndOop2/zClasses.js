@@ -1,0 +1,4 @@
+/*
+classes aisa kuch interesting kuch nhi hai bus kuch topic hai. behind the scene javascript me classes
+hoti nhi hai prototype object fucntion wahi chalta raheta hai.
+*/
