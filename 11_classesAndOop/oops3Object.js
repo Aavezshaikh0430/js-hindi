@@ -178,4 +178,8 @@ aur finaly aapko ek naya object returned kiya jata hai.
 jo ke hame chai ke under diya jata hai.
 
 ek chota sa (new)3 keyword hai litraly aur itna kuch kar jata hai behind the secne.
+
+abhi tak ham jo example liya tha object ko samajne ke liye . object ke under new keyword kya hota hai usko samajne ke liye 
+
+ab ham prototype wala section start ho raha hai.
 */
