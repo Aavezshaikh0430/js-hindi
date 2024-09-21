@@ -1,4 +1,227 @@
 <!-- ek kahani hai jab react naya naya market me aya tha react vergion 1 bhi nhi tha 0.1 vergin tha tab ki baat hia. kafi logo ke pass react ke repo bhi nhi the dhire dhire repo market me popular ho rahi thi.
 facebook ne kuch launch kiya hai. react bolke . vortual dom ka kuch concept leke aya hai page page reload hi nhi hota hia. jQuarry se bhi accha hai better hia. better implimentiaon hai. aur bahot light weight hai. aur fast hai. bada revolationary tech hai. use time documention bhi accha nhi tha.error araha tha sovle karrahe the. pooch rahe the team se . try karrahe the .
 
-use time pe call bind apply ye hai actualy me to us time abstration nhi lagaya gaya tha -->
+use time pe call bind apply ye hai actualy me to us time abstration nhi lagaya gaya tha .
+bind ko samjane ke liye hame actualy js file nhi html file banani bapdengi.
+
+suppose kariey ham react ka basic file bana rehe hai.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button clicked</button>
+    
+</body>
+<script>
+    /*
+    actualy us time script  vagaira likh nhi hoti thi. aap react ka project ek initialized kar sakte the . bunddler vagaira kafi un par kabhi discuss karenge. suppose kareiye unhone ustime ek 
+    class banai thi. kuch method unho ne likh diye the. baki ke hame lkhne padte the kyon ke button click karne pe kaya ho form data collect ho server per jayae aur wo sab to hame hi karna hai na to bhaki to basic request to nhi denge to suppose kariye unhone kuch istraha se apne react class bana ke di  aur kuch yaha construtor bhi diya.
+
+    class React {
+        construtor(){
+        }
+    }
+
+
+    construtotr ke under wo kya karte the sabse pahele to kuch varibale vagaira ye declar kar dete the suppose kariye  this.username hi le liya. aur server ki value defind ki this.server 
+    this.library ki value hardcode kar ke de di suppose kariye react ke library hardcode karke de di
+   
+     class React {
+        construtor(){
+        this.library = 'React'  
+       
+        }
+    }
+---------------------------------------------------------------------------------------
+     this.server = ki value di bydefault server start jo jata hai. 'http://localhost:3000' basic aapka construtor bana diya jata tha.
+
+
+    class React {
+        construtor(){
+        this.library = 'React'  
+        this.server = 'http://localhost:3000' 
+       // this.library ki value hardcode kar ke de di suppose kariye react ke library hardcode karke de di
+
+       
+        }
+    }
+--------------------------------------------------------------------------------------
+    construtor ke allawa kuch aur method decalre karne hoge the 
+    to mai chaheta hu. ke jaise hi isse ek naya object bane accha
+
+      class React {
+        construtor(){
+        this.library = 'React'  
+        this.server = 'http://localhost:3000' 
+       // this.library ki value hardcode kar ke de di suppose kariye react ke library hardcode karke de di
+
+       business requirenment // jaise hi ye page load ho aapka ek object creat ho react ka to object kaise creat hoga
+        }
+    }
+        const chai = new react ()
+        ban gaya hamara ek object
+ ------------------------------------------------------------------------------
+
+ ab mai kya chaheta hu ki  jaise hi ye kaam hojayae to button ka mujhe refrecne mil jaye aur ek method ho handle click ka wo form submit hogaya hia ya phir button click par massage kar de.
+
+ 2 part hai requirement ka 1 uska refrecne mil jaye button ka aur 1 click karne par click hogajaye consloelog hojaya ya form submit ho jaye. 
+ to mujhe pata hia. basic kaam mai bada esaly kar sakta hu ki ye jo handle clik hai isko mai ek mehtod likh sakta hun.
+
+ 
+
+ class React {
+        construtor(){
+        this.library = 'React'  
+        this.server = 'http://localhost:3000' 
+       
+        }
+
+        handleClick (){
+        console.log('button clicked') //button clicked to karna chaheta hu iske saat varibale bhi axis karna chaeta hu.
+        }
+    }
+        const chai = new react ()
+
+---------------------------------------------------------------------------------
+         class React {
+        construtor(){
+        this.library = 'React'  
+        this.server = 'http://localhost:3000' 
+       
+        }
+
+        handleClick (){
+        console.log('button clicked') 
+        console.log(this.server)
+        }
+    }
+        const chai = new react ()
+
+    ----------------------------------------------------------------------------------------
+    aisa kya kar sakta hu construtor ke under obeasy si baat hai jaise mai yaha new creat kiya to construtor mere ko refrecne dega in sabhi buttons ka to kuch manual code to likhahi hoga kisi ne virtual dom bana ke liye sab ka refrecne liya hi hoga page pe jitne  impliments han unka sab ka to bada hi easy hia.
+    document se  hi lina padta hia to aapke ke pass koi option hai nhi yahi under the hood c++ document chalta hai aapka 
+    to aapne ne kya kiya qurrey selector liya aur qurry selector ko bola jo bhi elemetns hai unka waise to node list se liya jata hia. internal react me jake to but thik hai. abhi ke liye ham (button) hi lelete hai.aur uske baad us button per addEvent listner laga dete hai. konsa event track kar rahe hia. to 'click'  konsa method yaha ana chahiye to handalClicked aana chahiye to handle click to kaam karenga nhi to uska refrecne bhi dena hoga to this.handleClick
+
+         class React {
+        construtor(){
+        this.library = 'React'  
+        this.server = 'http://localhost:3000' 
+
+        //requrirenment
+        document
+             .qurySelector('button')
+             //.addEventListner('click', handleClick())
+             .addEventListner('click', this.handleClick())
+       
+        }
+
+        handleClick (){
+        console.log('button clicked') 
+        console.log(this.server)
+        }
+    }
+        const chai = new react ()
+-------------------------------------------------------------------------
+abhi teachnicaly hamara kaam hojana chahiye. run karte hi ye object creat hote hi ye refrecne agaya hai aur qureys slector button aapko mil gaya ahi. button clicked yaha tak to code chal raha hai.
+jaise this.server mai acess karraha hu to vahi hamari purani kahani call padi thi ke
+this. karefrecne kahi khho gaya hai. isliye isko undefined mil raha hai
+refrecne poora hi kho gaya hai. ya sirf server nhi mil raha hai. ye dekh lete hai.
+
+ handleClick (){
+        console.log('button clicked') 
+        // console.log(this.server)
+        console.log(this)
+        }
+
+        kay is fucntion ke pass this. ka refrecne hai ya nhi hai. accha ye bhi badi intersting baat hai. button click to aa raha hai. this ka refrecne hai is ke pass this ke under aisa nhi kahli hamare yaad hai call wale video me this ka refrecne {} khali hi hogaya tha refrecne . but yaha uske pass to refrecne to hia. button ka but itti bhi situation khrab hai nhi but situation todi si unique hai ki this ka refrecne hai aur this. me ye button hona chahiye tha to wo button bhi hai to this ke under kyon ki this kis se aaraha hai.this ne call kiya kisne call kiya to is document.qurysleector is button ne call kiya. this. document  button se aaraha hi. 
+        to button ka refrecne to hai.
+        to problem kya aa rahi hai. problem ko solve kaise kiya jaye to aise bahot hota hai react ke under ki aapne method banadiya lekin us method ke under us button pe jate hai. us ke upper jab on click likhete the aur directly bol dete the aap ki aisa onclick hote the button ke under hi jaise button ke uper hi property likhte the onclick do onclick ke under hi javascript inject karte the. aur bolete the handleclikck
+
+        <button onclick= {handalCllick()} >ButtonClicked</button>
+        ya to arrow fucntion likhte the. wo bhi ek syntex hota hai
+        <button ={()=>{handleclick}}>ButtonClicked</button>
+
+        lekin ye code chalta hi nhi tha haan ji code me itni problem hoti thi ke wo chalta hi nhi tha. kyon ke uska chota sa syntex aur bhi tha. jo ke actualy aapko pata hona chahiye behind the scene. ye badi common sitution hai jab aisa hota hia. 
+        aise situation me aapke pass ek keyword hota hi. wo keyword actually me call nhi hai wo keyword hai.
+        bind
+        aapko sirf manualy forcefuly bind ka refrence nhi dena hai. usko keyword ko actually me bind karna hai wo keyword hi apne aap me bata raha hai ki usko attached karo apne saat to attached kaise kiya jata hia.
+        to 
+        this.handleClick jo hai wo kya kar raha hai. yaha pe to this. ka naya refrecne ban raha hai. lekin usko binding karni padengi taki aap construtor wale this ka bhi apna refrecne le paao kyon ke dekiye agar refrecne poora naya kardiya to bhi problem ho jayengi na ki wo button ka pata hi nhi lage ka usko konse button ne click kiya tha us case me aap call nhi kar sakte yaha pe aapko binding hi karni padengi 
+
+        document
+             .qurySelector('button')
+             //.addEventListner('click', this.handleClick())
+             .addEventListner('click', this.handleClick.bind(this))
+
+        ha bus itna kiya 
+        ab kya howa ye jo handleClick hai wo apna kaam jo karna tha uska refrecne to chala gaya uske pass to saat me 
+          this.library = 'React';
+            this.server = 'https://localhost:3000'
+        ye this bhi chala gaya jo bhi varibals hai fucntion hai.wo sab bhi uske saat attached hokar chale gaye. 
+        lekin unhone bhi kuch override nhi kara hai. jo aap btton ka refrence hai. handleclik ke jo milna chahiye tha ki kisne 
+        call kiya to button ne call kiya tabhi to usko uper all click chalenga warna ki kahi par bhi click karonge to click hota jayenga
+        to is liye ye bind ka sab se accha example hai.
+
+        
+    class React {
+        constructor(){
+            this.library = 'React';
+            this.server = 'https://localhost:3000'
+
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClicked.bind(this))
+        }
+        handleClicked(){
+            console.log('clicked');
+             console.log(this); //React {librery: 'React', server:'https://localhost:3000'}
+            // console.log(this.library); //react
+            // console.log(this.server);  //'https://localhost:3000'
+            
+            
+        }
+    }
+    const chai = new React ()
+
+    ----------------------------------------------------------------------------------
+
+    handleClicked(){
+        console.log(this); 
+            }
+    }
+
+    sirf this consloe karne par
+    ab aap is button ko click kare nge to aapke pass kay hai cliked bhi hai aur react ka jitta bhi kuch hai libreary server sab ka axis hai to react ke under jittne bhi fucntion defind kiye the unka bhi acess apko milta tha . aapke pass sabhi ka axis hai 
+    ye bada intesting example hai.
+    chaliye bus itna hi batana tha . aapka ka bind keyword bhi complete ho gaya.
+    
+    */
+
+    class React {
+        constructor(){
+            this.library = 'React';
+            this.server = 'https://localhost:3000'
+
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClicked.bind(this))
+        }
+        handleClicked(){
+            console.log('clicked');
+             console.log(this); //React {librery: 'React', server:'https://localhost:3000'}
+            // console.log(this.library); //react
+            // console.log(this.server);  //'https://localhost:3000'
+            
+            
+        }
+    }
+    const chai = new React ()
+     
+</script>
+</html>
