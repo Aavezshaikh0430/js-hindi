@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #313131; color: #000;">
+
+    <button id="orange">Orenge</button>
+    <button id="green">Green</button>
+
+
+    <!--bahot simple sa hai. agar aap is button ko click karenge to body ka backgreound change hona chahiye  -->
+</body>
+
+<script>
+
+    function makeFunc(){
+
+        const name = 'Mozilla';
+        const name2 = 'firefox'
+        function displayName (){
+            console.log(name);
+            console.log(name2);
+            
+            
+        }
+        return displayName;
+    }
+    const myFunc = makeFunc();
+    myFunc();
+   
+    /*
+    ye closure ka  maamla kya hai. pahele code analize karenge.
+
+    sabse pahele ek fucntion bana liya makeFunc() . uske under ek constant declare kiya name .
+    aapne makefucn() ke under ek aur fucntion decalre kiya displayName(). display name ke under aapne console.log name. to hame abhi abhi pata laga hai. lexical scoping se ke inner funtion ke pass outer fucntion ka scope hota hai teachnicalitis me.
+    aapne retrun displayname kara ye bada intresting concept hai.
+    lexical scopeing me ham yaha par displayname () ko run kar rahe the. 
+
+    pahele to yahi vo exicute hoga ki khatm ho jata tha. isbaar aapne displayname ka refrence hi pass kar diya as a return ab actualy scoping me sochna padenga kyon ki 
+    fucntion ka scope ka scope kab tak hota hai. jab tak wo exicute hota hia. 
+    to wo to exicute hogaya to katam ho gaya to ham 
+
+     makeFunc();
+
+    yaha par jab aate hai. aapne makeFunc() exicute kar diya hai. to is makeFun() ka scope gone  gayab 
+    agar fucntion ka pora scope hi gayab hogaya ab kaise chalengi lexical scopeing jabtak outer fucntion tha tab tak to inner fucntion ko mil rahi thi scoping 
+    outer fucntionn hi gayab ho gaya hai. to kaise hoga. yaha ek bahot hi intresting concept hai. java script ka wo hai. CLOSURE
+    all though us ka scope waha se hata diya fucntion exicution contex lekin memory ka waha par concept aata hai. javscript ke pass 2 hi to cheze hai 
+    1]memory store karna 
+    2]single thread par exicute karna 
+    actualy me memory ke refrene ka role aat hai. 
+
+    const myFunc = makeFunc();
+    myFunc();
+
+    aapne banaya hai const myFunc is ka role ya pe aata hai.
+    jaise hi aapne myFunc() ko exicute kara aur return kara  return displayName;
+
+    to sirf displayName nahi jayenga. agar uska outerFucntion bhi exists karta hai. uska bhi poora scope jayenga. kyon ke lexical scoping to hai hi. lexical scoping ki vajha se hi to wo jata hai. 
+    sirf innerfucntion hi nhi jayenga uske saat saat outer fucntion ke under bhi kuch hai. uska pora ka pora lexical scopeing bhi uth ke jata hai. 
+    pori memory share hoti hai. naki fucntion ka exicutional context .
+
+    closer ka matalb aap pora ka pora fucntion hi return karte hu. to sirf fucntion return nhi hota . uska pora scope retrun hota hai. sirf scope nhi hai wo lexical scope return hota hai. 
+
+    */
+</script>
+
+<script>
+
+// document.getElementById('orange').onclick = function(){
+//     document.body.style.backgroundColor = 'orange'
+// }
+
+// document.getElementById('green').onclick = function(){
+//     document.body.style.backgroundColor = 'green'
+// }
+
+
+//agar hame aise 40 button bana hoto ham aise kab tak banayenge ye acchi baat nhi hia. to ham ek click handler banate hai.
+//ham genric banayenge.
+
+function clickHandler (color){
+    // document.body.style.backgroundColor = `${color}`
+
+    
+}
+
+//ab hamare pass ek handler hai.ab har baar document. dcoumet. nhi likhan padenga.
+//ha refrecne to dena padenga.
+
+// document.getElementById('orange').onclick = clickHandler
+
+//aap ne usko fucntion nhi diya hai aapne diya usko fucntion ka refrecne. fucntion aur fucntion ke refrence //me diffrence hota hai.
+
+//fucntion ka refrecne ka matlab mai tumhe defination deta hu.
+
+//onclick ko kya chahiye onclick ko mujhe blobal eventhandlars exicutable chahiye .
+
+// document.getElementById('orange').onclick = clickHandler()
+
+//aise to nhi chalenga clickhandler ko color property bhi deni hogi clickhandler('orange')
+
+document.getElementById('orange').onclick = clickHandler('orange')
+
+//are ab to ye orange hi hogaya body bina clik kare supose kare mai use green kar leta hu
+
+document.getElementById('green').onclick = clickHandler('green')
+
+//are ab to ye green bhi hogaya 
+
+//kya problem hai mai expect kar raha tha jab return type me fucntion donge . par aap ne to function exucute hi kardiya . to problem hai.
+
+//actualy me hame uski defination ko change kar na hoga. defination ko change kasie karna hoga. to hame click handler me fucntion return karna hoga.
+
+function clickHandler (color){
+    // document.body.style.backgroundColor = `${color}`
+
+    return function (){
+        document.body.style.backgroundColor = `${color}`
+    }
+}
+
+</script>
+
+</html>

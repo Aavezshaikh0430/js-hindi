@@ -1,0 +1,168 @@
+<!-- /*
+Lexical Scoping and Closure:
+
+2 intresting topic dekenege 
+
+1]Lexical Scoping.
+2]closure:
+
+1]closure :
+har fucntion ka ek scope hota hia. closure ye kaheta hai mai ek inner fucntion hu. suppose kariye ek outer fucntion tha uska mai ne inner fucntion le liya to mujhe outer fucntion ka scope mil jata hai. scope ka acess se matlab . uske under jo varible declare kiye hai. jo property declare kari hai. jo fucntion declare kiye hai. unka bhi acesse mujhe milta hai.  itni baat samaj me aai.
+
+2]Lexical Scoping:
+code likhte hia.
+*/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur chai</title>
+</head>
+
+<body style="background-color: #313131; color: #000;">
+
+</body>
+
+<script>
+
+    // function init() {
+
+    //     let name = 'Mozilla';
+    //     function displayName() {
+    //         console.log(name);
+
+    //     }
+    //     displayName()
+    // }
+    // init()
+
+    /*
+    sabse pahele hamne ek fucntion init() creat kara . uske under ek name creat kara mozilla. init() function ke under hame ne phir ek fucntion displayname() creat kara. ab displayname()kya kar raha hai name print kar raha hai. par name kaha pe hai? name displayname() ke scope ke bahar hai. 
+    fucntion init() ke under hi displayName() ki defination decalre kiya aur usko run bhi kara run karne ke liye kya hai. [() paranthises.]aur aapne main fucntion call kara [init() function].
+
+    teachnicaly ham ne pada hai. har fucntion ka ek scope hota hai. aur scope ke bahar kuch decalre karte hai. to available nhi hota hia. to usko justification dekhte hai. kya aisa kuch hota hia.
+
+    hamari theroy prof karke dekte hai. sabse pahele dekha tha aap ne ek funtion liya hai.
+
+    fucntion outer(){
+        let username = 'hitesh'
+    }
+
+    console.log (username );  //Uncaught ReferenceError: username is not defined.
+
+    kya fucntion ke bahar ham username ko acess karsakte hai. kya?
+    ab tak hamne jo pada wo sahi tha ke ham fucntion ke under jo bhi varibale decalre karte hu wo outer scope me aapko avaiable nhi hote hai.
+==============================================================================================
+    ye kahani to thik hai magar mai jo kahani de raha hu wo kuch istraha hai ki agar iske under aap ek aur ek ur fucntion dicalre karte hu jiska naam inner fucntion rakhte hu . aur iske under console.log karte hu to aap ko yaha par username ka acess milenga.
+    inner fucntin ko call karonge.
+    console.log(username ) iska to aapko acess nhi mil raha hai.
+
+    fucntion outer(){
+        let username = 'hitesh'
+        fucntion inner(){
+        console.log('inner',username)
+        }
+        inner()
+    }
+        outer()
+
+    console.log ('Too Outer',username );
+    
+    ab mai inner fucntion me bhi userko call karraha hu aur . mai outerfucntion ke bahar bhi username ko call kr raha hu. to kaha mujhe username milna chahiye.aur kaha mujhe username nhi milna chahiye.
+
+    output : inner hitesh
+    inner me to hitesh available hai lekin jo outer hai waha par mujhe error de diya ki user not difind 
+
+    ye ek bahot intresting concept hai. ki dekhiye fucntion ke undre jo bhi aapne decalre kiya wo aapka outer space me available nhi hai. 
+
+    ------------------------------------------------------------------------
+    */
+
+    // function outer(){
+    //     let username = 'hitesh'
+    //     function inner(){
+    //         console.log('inner ',username);
+            
+    //     }
+    //     function innerTwo(){
+    //         console.log('innerTwo', username);
+            
+    //     }
+    //     inner()
+    //     innerTwo()
+    // }
+
+    // outer()
+    // console.log ('Too Outer',username ); //Uncaught ReferenceError: username is not defined
+
+    /*
+    inner par bhi hitesh hai. innerTwo par bhi hitesh hai.
+    itni baat to hai outer function me jo bhi decalre karenge wo inner jitne bhi fucntion me usee hame acess kar sakte hai.
+============================================================================================================
+    */
+
+    function outer(){
+        let username = 'hitesh'
+        
+        function inner(){
+            let secret = 'my123'
+            console.log('inner ',username);
+            
+        }
+
+        function innerTwo(){
+            console.log('innerTwo', username);
+            //console.log('innerTwo secret', secret);  //ReferenceError: secret is not defined
+            //upper wala fucntion ka variable ko acess karrahe hai.
+            
+        }
+        //console.log('outer',secret); //ReferenceError: secret is not defined . chote to bado se maang sakte hai. par bade chotu se nhi maang sakte.
+        
+        inner()
+        innerTwo()
+    }
+
+    outer()
+    // console.log ('Too Outer',username );
+
+    /*
+      function inner(){
+            let secret = 'my123'
+            console.log('inner ',username);
+            
+        }
+
+    ab ham ne firest inner fucntion me ek variable decalre kiye . 
+    kya inner two ye variable [let secret = 'my123'] acess karsakta hia.
+    kya inner two me secret run ho payenga.
+
+    agar outer fucntion hai parent hai. usse to aap kuch bhi le sakte hu .lekin bhai bhai apas me share nhi karenge. 
+
+    dekiye js pore family ke traha chalta hai. jo chote bacche hai wo jake papa se bhi kuch maang sakte hai. grandparent se bhi kuch maang sakte hai. bhaiyon me aaps me nhi banti to wo apas me nhi de pa rahe hai. ye bhaiyon sibling me aapas me nhi de parahe hai.
+
+    -----------------------------------------------------------
+    kya mai secret ka acess outer fucntion grand parent me acess kar pa raha hu. dekte hai.
+    kya hamara outer fucntion hai. kya usme acess hai. secret ka.
+
+    secret to technical innerone ke pass hona zarrori hai.
+    secret innertwo me to acess nhi hai.
+    kya secret outer fucntion me acess hoga dekte hia.
+    ========================================================================
+
+    chote to bado se maang sakte hai.
+    par bade chotu se nhi maang sakte.
+    choto ke jo persnal property hai. secret khilone hai. persnal chocolete hai. wo nhi maang sakte hai.
+    apas me bhai bhai bhi icecream share nhi karne wale hai.
+
+    =================================================================================
+
+  
+    
+
+    */
+</script>
+
+</html>

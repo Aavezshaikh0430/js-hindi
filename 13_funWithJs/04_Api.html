@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Api with javascript.</title>
+
+    <script>
+
+
+        //1 part
+            // function callApi() {
+            //     let result = fetch('https://jsonplaceholder.typicode.com/users');
+            //     console.log(result)
+        
+            //     /*
+            //     result ne promis return kara ye promise kya hota hai.jab bhi koi server request banate hai.
+            //     to javascript kya karti hai. syncronise behiviour karti hai. kisi bhi chez ka wait nhi karti hai. 
+            //     jab tak result aya tab tak code aage ja chuka tha.
+            //     isiliye fetch ek promise return karta hai. jaise result aaya aap usko handle kar sakte hai. thik hai. ab ham is fucntion ka handle kaise karsakte hai. is fucniton ko bana do async
+            //     */
+            // }
+            // callApi()
+        
+            //-----------------------------------------------------------------------------------------------
+        
+            //2 part
+            
+        
+        
+        //    async function callApi() {
+        //         let result = await fetch('https://jsonplaceholder.typicode.com/users');
+        //         console.log(result)
+        
+            
+        //     }
+        //     callApi()
+        
+        //data hame mila magar kuch smaj nhi aara
+        //data ko phir se convert karna hota hia. normal data ke under. json format me convert karna hota hai.
+        //------------------------------------------------------------------------------------------
+        
+        //3 part
+        
+        async function callApi() {
+                let result = await fetch('https://jsonplaceholder.typicode.com/users');
+                result = await result.json()
+                console.log(result)
+        
+            document.getElementById('userData')
+            .innerHTML = result
+            .map((user)=>
+
+                `<tr>
+                  <td>${user.name}</td>  
+                  <td>${user.email}</td>
+                  <td>${user.username}</td> 
+                  <td>${user.website}</td> 
+                  <td>${user.phone}</td> 
+                </tr>`
+            ).join('');
+
+            }
+            callApi()
+        
+            //ab hame data mila 
+         //------------------------------------------------------------------------------------------------
+
+
+        </script>
+
+</head>
+<body>
+
+    <h1>API call in JavaScript</h1>
+
+    <table border="1px">
+        
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Website</th>
+                <th>Phone Number</th>
+            </tr>
+
+        <tbody id = 'userData'>
+
+        </tbody>
+    </table>
+    
+</body>
+
+
+</html>
